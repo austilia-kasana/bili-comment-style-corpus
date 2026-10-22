@@ -1,0 +1,108 @@
+{
+  "generated_from": "本地 manifest.json 的脱敏汇总",
+  "dataset": {
+    "raw_records": 762,
+    "normalized_rows": 762,
+    "independent_expressions": 729,
+    "author_confirmation_rate": 1,
+    "content_duplicate_groups": 28,
+    "content_duplicate_rows": 61,
+    "coverage_time_utc": {
+      "earliest": "2023-07-26",
+      "latest": "2026-10-21"
+    },
+    "by_source_type": {
+      "dynamic_forward": 520,
+      "dynamic_original_text": 146,
+      "dynamic_original_draw": 78,
+      "comment_l1": 16,
+      "comment_l2": 2
+    },
+    "by_topic": {
+      "纯文字/个人动态": 189,
+      "其他": 190,
+      "unknown": 111,
+      "游戏": 80,
+      "动物/宠物": 50,
+      "生活/搞笑": 39,
+      "AI/科技": 21,
+      "社会/时事": 13,
+      "音乐": 12,
+      "作品/虚拟主播": 12,
+      "恐怖/悬疑": 12
+    },
+    "text_origin_confidence": {
+      "likely_user": 688,
+      "confirmed_user": 16,
+      "likely_user_with_auto_prefix": 56,
+      "confirmed_user_with_auto_prefix": 2
+    }
+  },
+  "reconciliation": {
+    "current_run_hits": 14,
+    "previously_collected_rows_retained": 2,
+    "cumulative_comment_l1_rows": 16,
+    "comment_l2_rows": 2
+  },
+  "context_completeness": {
+    "records_with_title_or_card": 398,
+    "records_with_non_placeholder_desc": 213,
+    "records_with_context_snippet": 5,
+    "videos_with_context_snippet": 2,
+    "records_title_only": 183,
+    "records_without_video_or_quote": 364,
+    "note": "元数据存在率不等于视频内容理解率"
+  },
+  "style_labels": {
+    "rows": 729,
+    "by_topic": {
+      "纯文字/个人动态": 189,
+      "其他": 190,
+      "unknown": 111,
+      "游戏": 80,
+      "动物/宠物": 50,
+      "生活/搞笑": 39,
+      "AI/科技": 21,
+      "社会/时事": 13,
+      "音乐": 12,
+      "作品/虚拟主播": 12,
+      "恐怖/悬疑": 12
+    },
+    "by_intent": {
+      "引用/转发理由": 197,
+      "即时反应": 116,
+      "提问/猜想": 115,
+      "观点判断": 101,
+      "个人叙述": 64,
+      "解释/论证": 48,
+      "情绪/感慨": 46,
+      "梗/调侃": 36,
+      "unknown": 6
+    },
+    "by_style": {
+      "短反应": 258,
+      "口语吐槽": 221,
+      "叙事/抒情": 114,
+      "分析解释": 113,
+      "长推理": 13,
+      "unknown": 10
+    },
+    "by_context": {
+      "high": 204,
+      "medium": 164,
+      "low": 361
+    }
+  },
+  "sources": {
+    "space_dynamics": { "pages": 62, "items": 744, "has_more": true },
+    "video_comments": { "videos": 24, "comments_seen": 4913, "reply_total": 35554, "hits_l1": 16, "hits_l2": 2 },
+    "comment_threads": { "floors": 16, "with_context": 18 }
+  },
+  "notes": [
+    "评论无全量接口；每视频最多 30 页，覆盖不完整。",
+    "观看历史/点赞记录为私密数据，未读取。",
+    "公开收藏夹接口返回 -400，未取得。",
+    "字幕片段只补了 2 个视频。",
+    "标签为规则启发式首版，不是人格结论。"
+  ]
+}

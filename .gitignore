@@ -1,0 +1,28 @@
+# 原始个人语料：默认不公开
+data/raw.jsonl
+data/comments.csv
+data/context_review.csv
+data/style_labels.csv
+data/comment_context.json
+data/video_meta.json
+data/test_videos.json
+data/*_state.json
+data/space_state.json
+data/comment_state.json
+data/thread_state.json
+
+# 凭证 / 密钥
+credentials.json
+**/credentials.json
+**/.env
+**/*.pem
+**/*.key
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# 依赖
+node_modules/
