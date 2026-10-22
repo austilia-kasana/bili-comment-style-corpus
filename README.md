@@ -41,6 +41,7 @@
 - **v2-lite**：三条硬规则（不虚构事实/不误判身份/不编造个人经历）+ 放松机械禁令；不写 v3、不扩语料。
 - **结果（已填）**：v2-lite 总分 **6/6 赢**；贴合 4.17 / 有内容 4.67 / 不公式化 4.33，事实问题 2 条；但 **“像本人” 2.00，低于 v1 的 2.33**。2 个信息不足视频 **4/4 正确 SKIP**。结论：v2-lite 改善了准确/内容，没解决“像本人”；不写 v3。样本小、探索性；盲评在时间压力下完成、标准偏宽松，只作方向性参考。
 - 详见 [`docs/10-task06-report.md`](docs/10-task06-report.md)。
+- **暂行指南**：[`data/style_guide_v1.1_interim.md`](data/style_guide_v1.1_interim.md)（Task 06 后整合版；**不覆盖** v1 / v2-lite 原件）。
 
 ## 阅读顺序（给 GPT）
 
@@ -74,6 +75,7 @@ blind_review_task05.md Task 05 X/Y/Z 随机盲评表
 blind_review_task06.md Task 06 X/Y 随机盲评表
 data/style_guide_v2.md Task 05 v2 指南
 data/style_guide_v2_lite.md Task 06 v2-lite 指南
+data/style_guide_v1.1_interim.md 暂行整合版（不覆盖 v1 / v2-lite）
 data/task05_*.csv     审计 / 结果 / key
 data/task06_*.csv     审计 / 结果 / 生成顺序 / key
 docs/08-task05-plan.md / docs/09-task05-report.md
