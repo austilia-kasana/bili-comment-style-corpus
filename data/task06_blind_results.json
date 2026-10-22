@@ -1,0 +1,27 @@
+{
+  "generated": 16,
+  "normal_videos": 6,
+  "insufficient_videos": 2,
+  "means": {
+    "v1": { "像本人": 2.33, "贴合": 3.0, "有内容": 3.17, "不公式化": 3.67 },
+    "v2lite": { "像本人": 2.0, "贴合": 4.17, "有内容": 4.67, "不公式化": 4.33 }
+  },
+  "score_wins": { "v1": 0, "v2lite": 6, "tie": 0 },
+  "willing_to_post": { "v1": 2, "v2lite": 3 },
+  "fact_stance_issues": { "v1": 3, "v2lite": 2 },
+  "items": [
+    { "video": "BV1eYroBHE1P", "v1": 10, "v2lite": 11, "best": "v2lite" },
+    { "video": "BV1p2zKBXE9f", "v1": 10, "v2lite": 14, "best": "v2lite" },
+    { "video": "BV1vjc7zbEyM", "v1": 12, "v2lite": 16, "best": "v2lite" },
+    { "video": "BV1dX4y1Y7zF", "v1": 13, "v2lite": 16, "best": "v2lite" },
+    { "video": "BV1tVxEz2Ew5", "v1": 11, "v2lite": 16, "best": "v2lite" },
+    { "video": "BV1nK421t7P8", "v1": 17, "v2lite": 18, "best": "v2lite" }
+  ],
+  "skip": {
+    "insufficient_videos": 2,
+    "both_versions_skip": 4,
+    "correct": true,
+    "note": "两条信息不足视频的 X/Y 均为 SKIP；盲评表未单独勾选，按输出判定为正确，不计入正常均分。"
+  },
+  "note": "v2-lite 总分赢 6/6，但“像本人”均值低于 v1（2.00 vs 2.33）；这说明它改善了贴合/内容/不公式化，但没有解决“像本人”。"
+}
