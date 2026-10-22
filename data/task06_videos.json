@@ -1,0 +1,108 @@
+[
+  {
+    "bvid": "BV1eYroBHE1P",
+    "title": "你手机密码是多少！",
+    "topic": "生活/搞笑",
+    "context_quality": "high",
+    "insufficient": false,
+    "facts": [
+      { "text": "对方要查手机，发现密码被改了", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "密码改成了“你妈妈的生日”，但妈妈过农历生日，他不记得公历", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "最后一句“下不为例”", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "视频是游戏二创，模仿网络热门“查手机”视频；画面中只有女性角色：一方是玩家操控角色，另一方是游戏自机角色", "source": "user_report", "reviewed_by_user": true },
+      { "text": "简介列了鸣潮的模型/场景/节点", "source": "description", "reviewed_by_user": false }
+    ],
+    "unknown": "两名角色的具体关系（朋友/搭档）未确认；不要写成男女朋友/丈母娘"
+  },
+  {
+    "bvid": "BV1p2zKBXE9f",
+    "title": "羊村村长抓羊实录，最破防的一集！天才萌新公测卡池拉满全角色满潜测评鉴赏！",
+    "topic": "游戏",
+    "context_quality": "high",
+    "insufficient": false,
+    "facts": [
+      { "text": "卡池拉满、全角色满潜测评、“六星说送就送”、领返利", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "“羊村村长”是 UP 主外号；“羊”是角色外号；“卡池拉满”是 UP 主的目标/视频宗旨", "source": "user_report", "reviewed_by_user": true },
+      { "text": "标题：羊村村长抓羊实录，最破防的一集", "source": "title", "reviewed_by_user": false }
+    ],
+    "unknown": "具体游戏名、卡池概率未确认"
+  },
+  {
+    "bvid": "BV1vjc7zbEyM",
+    "title": "老师下跪？剧情崩坏？我的看法",
+    "topic": "游戏/剧情",
+    "context_quality": "high",
+    "insufficient": false,
+    "facts": [
+      { "text": "老师给对面下跪求情，希望能留下学生的性命", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "老师这边学生已经打光，卡片、平板用不了，底牌用尽", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "UP 主评价“合情但不合理”，提到东亚/日韩下跪的文化差异，建议改成鞠躬", "source": "subtitle", "reviewed_by_user": false }
+    ],
+    "unknown": "具体游戏名、后续剧情未确认"
+  },
+  {
+    "bvid": "BV1dX4y1Y7zF",
+    "title": "为什么我的世界更容易让人晕3D？你为什么只晕某一款游戏？【原来如此】",
+    "topic": "知识",
+    "context_quality": "high",
+    "insufficient": false,
+    "facts": [
+      { "text": "3D 眩晕是“眼睛说在动、身体说没动”，脑子和身体在打架", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "视频比较《我的世界》和《无主之地》的晕眩程度", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "讨论导致不同游戏晕眩程度不同的因素", "source": "subtitle", "reviewed_by_user": false }
+    ],
+    "unknown": "具体结论、科学依据未确认"
+  },
+  {
+    "bvid": "BV1tVxEz2Ew5",
+    "title": "共享夜坝以及深蓝之歌（歌在最后）",
+    "topic": "游戏",
+    "context_quality": "high",
+    "insufficient": false,
+    "facts": [
+      { "text": "共享夜坝地图，大家开手电筒一起走，但开手电就是活靶子", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "物资不丰富，收益不如跑刀；UP 主担心官方“动刀”削弱", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "片尾有歌", "source": "title", "reviewed_by_user": false }
+    ],
+    "unknown": "具体游戏版本、歌曲信息未确认"
+  },
+  {
+    "bvid": "BV1nK421t7P8",
+    "title": "【崩坏3吐槽】评分5.2，开服就爆炸！七年老游戏能打赢复活赛吗？",
+    "topic": "游戏",
+    "context_quality": "high",
+    "insufficient": false,
+    "facts": [
+      { "text": "500 万预约、开服评分 5.2", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "崩坏3 第二部、七年老游戏", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "UP 主吐槽“切割完了还要靠老东西救场”", "source": "subtitle", "reviewed_by_user": false }
+    ],
+    "unknown": "后续运营、完整评价未确认"
+  },
+  {
+    "bvid": "BV1herXBNEMB",
+    "title": "鬼叔玩原神6.3剧情！老米神了，原神牛逼！",
+    "topic": "游戏",
+    "context_quality": "low",
+    "insufficient": true,
+    "facts": [
+      { "text": "鬼叔在玩《原神》6.3 剧情", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "剧情里“我们的人变成了魔物”，需要弹反、带雷属性", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "鬼叔情绪高涨（“卧槽燃起来了”）", "source": "subtitle", "reviewed_by_user": false },
+      { "text": "视频重点是后半段剧情引起的玩家巨大争议，但具体争议内容未在字幕中说明", "source": "user_report", "reviewed_by_user": true }
+    ],
+    "unknown": "核心剧情争议的具体内容（不能靠常识补；如果写不出贴合重点的评论，应 SKIP）"
+  },
+  {
+    "bvid": "BV1mC411W74W",
+    "title": "花火能让你体验多种户型？",
+    "topic": "知识",
+    "context_quality": "low",
+    "insufficient": true,
+    "facts": [
+      { "text": "标题：花火能让你体验多种户型？", "source": "title", "reviewed_by_user": false },
+      { "text": "简介是模型/动作/镜头/MME 的制作名单，无视频内容", "source": "description", "reviewed_by_user": false }
+    ],
+    "unknown": "视频实际内容未知；应 SKIP"
+  }
+]

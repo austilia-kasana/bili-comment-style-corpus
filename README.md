@@ -34,6 +34,14 @@
 
 详见 [`docs/09-task05-report.md`](docs/09-task05-report.md)。
 
+## 任务 06（探索性）
+
+- **只比 v1 vs v2-lite**：6 个正常视频 + 2 个信息不足视频；16 次独立生成（v1 / v2-lite 各 8），执行顺序随机、每次新上下文。
+- **修正 3 个上下文**：手机密码/羊村用 `user_report` + `reviewed_by_user=true`；原神 6.3 拉了完整字幕仍无法确认核心争议 → `unknown`，移出主测、作为信息不足测试。
+- **v2-lite**：三条硬规则（不虚构事实/不误判身份/不编造个人经历）+ 放松机械禁令；不写 v3、不扩语料。
+- **结果**：2 个信息不足视频 v1/v2-lite 共 4 次全部正确 SKIP；6 个正常视频 12 条候选已生成，盲评待填。样本小，探索性，不宣称显著。
+- 详见 [`docs/10-task06-report.md`](docs/10-task06-report.md)。
+
 ## 阅读顺序（给 GPT）
 
 1. [`transcript/conversation.md`](transcript/conversation.md) —— **这句话之后的全部对话**：任务 01→04 的用户消息原文 + 助手回复（含澄清与仓库搭建）
@@ -43,7 +51,8 @@
 5. [`docs/06-ab-test.md`](docs/06-ab-test.md) —— Task 04 A/B 盲评设计与产出
 6. [`docs/08-task05-plan.md`](docs/08-task05-plan.md) —— Task 05 计划
 7. [`docs/09-task05-report.md`](docs/09-task05-report.md) —— Task 05 审计、v2、三组盲测
-8. [`docs/07-privacy-and-limits.md`](docs/07-privacy-and-limits.md) —— 哪些数据不在公开仓库、为什么
+8. [`docs/10-task06-report.md`](docs/10-task06-report.md) —— Task 06 v2-lite、独立生成、SKIP 测试
+9. [`docs/07-privacy-and-limits.md`](docs/07-privacy-and-limits.md) —— 哪些数据不在公开仓库、为什么
 
 ## 目录
 
@@ -62,9 +71,13 @@ data/
 test_results.csv      A/B 结果（评论为模型生成，不含个人原文）
 blind_review.md       Task 04 X/Y 随机盲评表
 blind_review_task05.md Task 05 X/Y/Z 随机盲评表
+blind_review_task06.md Task 06 X/Y 随机盲评表
 data/style_guide_v2.md Task 05 v2 指南
+data/style_guide_v2_lite.md Task 06 v2-lite 指南
 data/task05_*.csv     审计 / 结果 / key
+data/task06_*.csv     审计 / 结果 / 生成顺序 / key
 docs/08-task05-plan.md / docs/09-task05-report.md
+docs/10-task06-report.md
 PUSH.md               如何创建仓库、哪些不能公开
 scripts/README.md     采集/构建脚本的位置与用法
 ```
