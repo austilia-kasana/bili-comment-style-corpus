@@ -1,0 +1,36 @@
+{
+  "generated": 12,
+  "candidates": 36,
+  "skip": 0,
+  "means": {
+    "A": { "像本人": 1.25, "贴合": 1.83, "有内容": 1.08, "不公式化": 1.17 },
+    "B": { "像本人": 1.67, "贴合": 2.75, "有内容": 2.58, "不公式化": 3.0 },
+    "C": { "像本人": 1.33, "贴合": 2.75, "有内容": 3.08, "不公式化": 2.33 }
+  },
+  "score_wins": { "A": 0, "B": 6, "C": 3, "tie": 3 },
+  "willing_to_post": { "A": 0, "B": 3, "C": 1 },
+  "fact_stance_issues": { "A": 1, "B": 2, "C": 3 },
+  "issue_list": [
+    { "video": "BV1herXBNEMB", "group": "A", "issue": "视频重点在后半段剧情争议，三条都没接住" },
+    { "video": "BV1herXBNEMB", "group": "B", "issue": "视频重点在后半段剧情争议，没接住" },
+    { "video": "BV1herXBNEMB", "group": "C", "issue": "视频重点在后半段剧情争议，没接住" },
+    { "video": "BV1eYroBHE1P", "group": "B", "issue": "把角色误读为“男的”；实际是游戏二创、两名女性角色" },
+    { "video": "BV1eYroBHE1P", "group": "C", "issue": "把角色误读为“男的/丈母娘”；实际是游戏二创、两名女性角色" },
+    { "video": "BV1p2zKBXE9f", "group": "C", "issue": "把“羊村村长”当字面意思；实际是 UP 主外号、羊是角色外号、卡池拉满是 UP 主目标" }
+  ],
+  "items": [
+    { "video": "BV1Rupi6HEqo", "A": 6, "B": 8, "C": 8, "best": ["B", "C"] },
+    { "video": "BV1yJWw66Era", "A": 4, "B": 9, "C": 9, "best": ["B", "C"] },
+    { "video": "BV1vjc7zbEyM", "A": 4, "B": 12, "C": 10, "best": ["B"] },
+    { "video": "BV1herXBNEMB", "A": 5, "B": 8, "C": 10, "best": ["C"] },
+    { "video": "BV1vX4Hz6EeG", "A": 4, "B": 6, "C": 11, "best": ["C"] },
+    { "video": "BV1nK421t7P8", "A": 6, "B": 10, "C": 11, "best": ["C"] },
+    { "video": "BV1dX4y1Y7zF", "A": 5, "B": 13, "C": 9, "best": ["B"] },
+    { "video": "BV1tVxEz2Ew5", "A": 5, "B": 13, "C": 11, "best": ["B"] },
+    { "video": "BV1eYroBHE1P", "A": 5, "B": 9, "C": 9, "best": ["B", "C"] },
+    { "video": "BV1gfxpzaE9V", "A": 10, "B": 13, "C": 11, "best": ["B"] },
+    { "video": "BV1s94y1g7oT", "A": 5, "B": 12, "C": 10, "best": ["B"] },
+    { "video": "BV1p2zKBXE9f", "A": 5, "B": 7, "C": 5, "best": ["B"] }
+  ],
+  "note": "用户盲评；A=基础，B=v1，C=v2。事实/立场问题按用户标注统计，和模型自审不一致时以用户为准。"
+}
