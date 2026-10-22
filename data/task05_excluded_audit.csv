@@ -1,0 +1,5 @@
+video_id,title,fact,source,conflict,decision
+BV1EsBjYLEmC,他只答对9道题…《贫民窟的百万富翁》,主持人在镜子上写下字母 B,subtitle,用户盲评指出“主持人没有在镜子上写B”；字幕与用户描述冲突,needs_review；不进入本轮生成
+BV1hnpm6CE16,“司凤小猫”让人来气的根本原因,挑衅时下巴微抬；卖萌眼睛睁大圆眼,subtitle,用户指出“大眼抬头看卖萌、眼睛微眯低头看挑衅”；与字幕的“下巴微抬”冲突,needs_review（头部姿态）；不进入本轮生成
+BV19spM6qEh5,“若不是你突然闯进我生活”,歌词/BGM 绿色DJ/参考原创,subtitle+description,用户指出实际是 VTuber 东雪莲的抽象跳舞，不是歌词/标题/简介,needs_review；不进入本轮生成
+BV1kU421d718,【ヨルシカ】想你了牢拿,简介是玩梗小作文,description,用户指出 UP 主视频里没有文字内容,needs_review；不进入本轮生成
