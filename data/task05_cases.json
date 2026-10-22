@@ -1,0 +1,159 @@
+[
+  {
+    "bvid": "BV1d4g16mEse", "topic": "游戏", "title": "一款被大多数整合包ban掉的模组，究竟有多逆天？【我的世界】", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "标题与简介都称该模组被大多数整合包 ban", "source": "title+description", "ref": "标题/简介", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：等价交换为几乎所有物品提供交易渠道，EMC 是核心机制", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f3", "text": "字幕：因太超模，很多整合包改合成表；评分 5.0；本期是全流程实况+教学", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f4", "text": "UP 主称 EMC 是“放到现在依旧最超模的机制之一”", "source": "subtitle", "ref": "字幕", "status": "reported_claim" }
+    ],
+    "unconfirmed": "具体数值平衡、各整合包改动细节",
+    "A": "这个模组看起来确实挺逆天的，等价交换的机制很有意思，感谢UP主分享，学到了很多。",
+    "B": "等价交换放到现在还是超模，整合包 ban 它真不冤。",
+    "C": "被 ban 不冤，EMC 的交易面太宽，整合包不改合成表根本压不住。",
+    "issues": { "A": [], "B": [], "C": [] }
+  },
+  {
+    "bvid": "BV1u7uS67Eqe", "topic": "游戏", "title": "外挂巡查《8:1谁错了？ACE复核最有用的一次》", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕：9 个巡查里 8 个认为目标没开挂，只有 UP 主一人觉得有问题", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：PC 端游；目标撤离成功、击杀 4 人", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f3", "text": "最终判定结论未在片段中给出", "source": "inference", "ref": "片段缺失", "status": "unknown" }
+    ],
+    "unconfirmed": "最终判定结论",
+    "A": "外挂巡查确实很重要，UP主做得很认真，希望游戏环境越来越好。",
+    "B": "8:1 这种局最容易吵起来，端游巡查确实得多看几遍才敢下结论。",
+    "C": "9 个巡查里 8 个说没开，这种分歧比最后判没判还难办。",
+    "issues": { "A": [], "B": [], "C": [] }
+  },
+  {
+    "bvid": "BV1hnpm6CE16", "topic": "动物", "title": "“司凤小猫”让人来气的根本原因：实质是挑衅动作", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕：卖萌面部信号=眼睛睁大、露大面积眼白；挑衅面部信号=眯眼斜视、眼缝窄、直视、下巴微抬", "source": "subtitle", "ref": "字幕 14–36s", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：卖萌肢体动作=向内收缩；挑衅=向外扩张、动作大、节奏鲜明、带表演性", "source": "subtitle", "ref": "字幕 37–58s", "status": "confirmed" },
+      { "id": "f3", "text": "字幕：UP 主称这些信号会触发人的生理性厌恶", "source": "subtitle", "ref": "字幕 8–11s", "status": "reported_claim" }
+    ],
+    "unconfirmed": "三只猫的品种、后续",
+    "A": "UP主分析得很有道理，原来小猫的表情还有这么多讲究，长知识了。",
+    "B": "原来关键在眼睛——圆眼露眼白是卖萌，挑衅是另一套信号，难怪看着不舒服。",
+    "C": "不只是眼睛，动作也对上了：卖萌往内收，挑衅往外扩，还带表演性。",
+    "issues": { "A": [], "B": ["只提眼睛，漏了字幕里的肢体动作信号"], "C": [] }
+  },
+  {
+    "bvid": "BV1U3411u7m1", "topic": "动物", "title": "凶猛的狮子将一只小猫，活活的咬死,简直太残忍了", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕：母狮把小猫按在身下撕咬，之后松口", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：小猫受伤、在地上颤抖", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f3", "text": "字幕旁白：自然界弱肉强食", "source": "subtitle", "ref": "字幕", "status": "reported_claim" },
+      { "id": "f4", "text": "狮子为什么松口、是否真饿：片段未说明", "source": "inference", "ref": "片段缺失", "status": "unknown" }
+    ],
+    "unconfirmed": "小猫最终是否存活、拍摄地点",
+    "A": "大自然弱肉强食，看着挺揪心的，希望小猫能好起来。",
+    "B": "咬了半天又松开，可能也不是真饿，就是本能压了一下——小猫受的伤才是实打实的。",
+    "C": "咬完又松开，小猫已经在地上抖了——弱肉强食这四个字，落在谁身上谁疼。",
+    "issues": { "A": [], "B": ["“不是真饿，就是本能”是未证实的动机推断"], "C": [] }
+  },
+  {
+    "bvid": "BV1RK4y1j75P", "topic": "动物", "title": "薮猫宝宝野外遭遇成年狮子惨被咬死，薮猫妈妈远远看着束手无策", "context_quality": "medium",
+    "facts": [
+      { "id": "f1", "text": "标题/简介：薮猫宝宝在野外遭遇成年狮子，被咬死", "source": "title+description", "ref": "标题/简介", "status": "description_only" },
+      { "id": "f2", "text": "简介：薮猫妈妈在远处看着、束手无策", "source": "description", "ref": "简介", "status": "description_only" }
+    ],
+    "unconfirmed": "视频画面未核验；拍摄地点/时间/后续",
+    "A": "大自然确实很残酷，看到这样的画面心里挺难受的，希望小动物都能平安。",
+    "B": "薮猫妈妈就在旁边看着，这种无能为力比画面本身还难受。",
+    "C": "薮猫妈妈就在旁边，什么也做不了——这一下比咬本身还难受。",
+    "issues": { "A": [], "B": [], "C": [] }
+  },
+  {
+    "bvid": "BV1iS411w7s3", "topic": "搞笑", "title": "这诅咒太馋人了，让你变得受女孩喜欢，欧美爆笑高颜值喜剧片《幸运查克》", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕：查理被诅咒，女人见到他就投怀送抱", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：他拒绝了 Jessica Alba 饰演的角色", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f3", "text": "字幕：童年游戏片段", "source": "subtitle", "ref": "字幕", "status": "confirmed" }
+    ],
+    "unconfirmed": "结局、完整剧情",
+    "A": "这部喜剧片挺有意思的，设定很新颖，演员颜值也高，推荐大家看看。",
+    "B": "诅咒听着像福利，真落到自己身上就未必了——拒绝那段才是全片最好笑的地方。",
+    "C": "这诅咒放别人身上像福利，放查理身上就成了麻烦；他拒绝那段确实好笑。",
+    "issues": { "A": [], "B": [], "C": [] }
+  },
+  {
+    "bvid": "BV1ox411i7rD", "topic": "搞笑", "title": "荒岛求生营   排名不分先后（英语中字）（第二季的二三集炸了 在另外一个合集）", "context_quality": "medium",
+    "facts": [
+      { "id": "f1", "text": "简介：13 名英国男性被送到太平洋无人岛，独自生活一个月", "source": "description", "ref": "简介", "status": "description_only" },
+      { "id": "f2", "text": "简介：只有一身衣服和基本工具；首要任务是找淡水与食物", "source": "description", "ref": "简介", "status": "description_only" }
+    ],
+    "unconfirmed": "视频画面未核验；具体人物表现与结果",
+    "A": "这个求生节目很真实，贝尔的节目一直很好看，能学到不少生存知识。",
+    "B": "13 个人丢岛上一个月，只有一身衣服和基本工具——光找水就够忙活一整天。",
+    "C": "13 个人、一个月、一身衣服加基本工具，光找水和吃的就够忙一整天。",
+    "issues": { "A": [], "B": [], "C": [] }
+  },
+  {
+    "bvid": "BV19spM6qEh5", "topic": "音乐", "title": "“若不是你突然闯进我生活”", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕：歌词含“若不是你突然闯进我生活”“从此你在我心里只剩绿色”", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f2", "text": "简介：BGM 为绿色 DJ 版；参考原创 BV16Vap6yEGP", "source": "description", "ref": "简介", "status": "confirmed" },
+      { "id": "f3", "text": "简介称 BGM 是绿色 DJ，但音频实际版本未核验", "source": "inference", "ref": "简介", "status": "description_only" }
+    ],
+    "unconfirmed": "演唱者、完整版发布时间、音频实际版本",
+    "A": "这首歌很好听，旋律很洗脑，期待完整版。",
+    "B": "绿色DJ版把这首歌唱得更上头了，副歌一出来就跟着哼。",
+    "C": "最后一句“只剩绿色”，配这个 DJ 版收尾，挺狠的。",
+    "issues": { "A": [], "B": ["“跟着哼”是虚构个人体验；“更上头”是对音频的判断但音频未核验"], "C": [] }
+  },
+  {
+    "bvid": "BV16c411V7XG", "topic": "剧情", "title": "巨人大结局：轮回就像一个圈，故事从这里开始也从这里结束", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕：艾伦被斩首后，巨人诅咒消失", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：马莱士兵不信，仍想清算艾族人", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f3", "text": "字幕：阿尔敏以“击杀艾伦的救世主”身份出面", "source": "subtitle", "ref": "字幕", "status": "confirmed" }
+    ],
+    "unconfirmed": "其他角色结局、后续政治安排",
+    "A": "巨人的结局确实很有深度，自由这个主题贯穿全剧，看完很感慨。",
+    "B": "艾伦一死诅咒就没了，可马莱士兵第一反应是不信——这才是全剧最真实的地方。",
+    "C": "诅咒说没就没，马莱士兵却不肯信；阿尔敏只能拿击杀艾伦的身份去压场。",
+    "issues": { "A": [], "B": [], "C": [] }
+  },
+  {
+    "bvid": "BV1EsBjYLEmC", "topic": "剧情", "title": "他只答对9道题，就赚了2000万，靠的却是悲惨的人生经历，20分钟看完2008年印度爱情电影《贫民窟的百万富翁》", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕：主持人在卫生间镜子上写下字母 B", "source": "subtitle", "ref": "字幕 9–13s", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：贾马尔没有选 B；用 50:50 去掉两个错误答案；最后选 D；D 正确", "source": "subtitle", "ref": "字幕 33–45s", "status": "confirmed" },
+      { "id": "f3", "text": "字幕：主持人脸色阴沉", "source": "subtitle", "ref": "字幕 46s", "status": "confirmed" },
+      { "id": "f4", "text": "主持人写 B 的动机（帮忙/设套）：片段未说明", "source": "inference", "ref": "片段缺失", "status": "needs_review" }
+    ],
+    "unconfirmed": "主持人动机、后续结局",
+    "A": "这部电影很经典，剧情紧凑，反映了印度社会的现实，值得一看。",
+    "B": "主持人镜子上写个 B，看着像帮忙，其实是把他往作弊的坑里推——这题答对才是真本事。",
+    "C": "主持人在镜子上写 B，贾马尔最后选了 D——这一下就有意思了。",
+    "issues": { "A": [], "B": ["“其实是把他往作弊的坑里推”是未证实的动机推断"], "C": [] }
+  },
+  {
+    "bvid": "BV1We4y1871T", "topic": "知识", "title": "中国历史上1500年的“空白期”，无任何史料记载，期间发生了什么？", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕/简介：中国历史上约 1500 年的“空白期”，无史料记载", "source": "subtitle+description", "ref": "字幕/简介", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：夏代是否被西方学界肯定、夏朝是否存在、有无证据", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f3", "text": "字幕：四大文明古国、传承未中断", "source": "subtitle", "ref": "字幕", "status": "confirmed" }
+    ],
+    "unconfirmed": "具体考古结论与证据链",
+    "A": "这个历史科普很有意义，夏朝的存在确实需要更多考古证据，感谢UP主。",
+    "B": "夏朝这事最难受的是——不是没有传说，是没有能对上的实物证据。",
+    "C": "传说不少，能对上的实物证据却没多少，夏朝这道题难就难在这。",
+    "issues": { "A": [], "B": [], "C": [] }
+  },
+  {
+    "bvid": "BV1c9DWBwEXy", "topic": "知识", "title": "【1.21.1/1.20.1 MC 模组】1.5.2 车万女仆更新：AI智能体与杂项更新", "context_quality": "high",
+    "facts": [
+      { "id": "f1", "text": "字幕：1.5.2 更新，兼容精妙背包", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f2", "text": "字幕：女仆可操作背包内物品取出/放入", "source": "subtitle", "ref": "字幕", "status": "confirmed" },
+      { "id": "f3", "text": "字幕：新增 AI 智能体“酒壶”；还有杂项更新", "source": "subtitle", "ref": "字幕", "status": "confirmed" }
+    ],
+    "unconfirmed": "其他更新细节与平衡性",
+    "A": "这个模组更新内容很丰富，AI 智能体听起来很有意思，感谢UP主介绍。",
+    "B": "女仆能自己从精妙背包里拿东西，这已经不是女仆了，是随身仓库管理员。",
+    "C": "女仆能直接操作精妙背包里的东西，这下出门不用自己翻箱子了。",
+    "issues": { "A": [], "B": [], "C": [] }
+  }
+]

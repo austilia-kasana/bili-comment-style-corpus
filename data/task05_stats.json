@@ -1,0 +1,59 @@
+{
+  "videos": 12,
+  "candidates": 36,
+  "skip": 0,
+  "context_quality": {
+    "high": 10,
+    "medium": 2
+  },
+  "topics": {
+    "游戏": 2,
+    "动物": 3,
+    "搞笑": 2,
+    "音乐": 1,
+    "剧情": 2,
+    "知识": 2
+  },
+  "facts": 37,
+  "facts_by_source": {
+    "title+description": 2,
+    "subtitle": 26,
+    "inference": 4,
+    "description": 4,
+    "subtitle+description": 1
+  },
+  "facts_by_status": {
+    "confirmed": 26,
+    "reported_claim": 3,
+    "unknown": 2,
+    "description_only": 5,
+    "needs_review": 1
+  },
+  "self_audit_issues": {
+    "A": 0,
+    "B": 4,
+    "C": 0
+  },
+  "self_audit_list": [
+    {
+      "video": "BV1hnpm6CE16",
+      "group": "B",
+      "issue": "只提眼睛，漏了字幕里的肢体动作信号"
+    },
+    {
+      "video": "BV1U3411u7m1",
+      "group": "B",
+      "issue": "“不是真饿，就是本能”是未证实的动机推断"
+    },
+    {
+      "video": "BV19spM6qEh5",
+      "group": "B",
+      "issue": "“跟着哼”是虚构个人体验；“更上头”是对音频的判断但音频未核验"
+    },
+    {
+      "video": "BV1EsBjYLEmC",
+      "group": "B",
+      "issue": "“其实是把他往作弊的坑里推”是未证实的动机推断"
+    }
+  ]
+}

@@ -22,14 +22,26 @@
 | 语境 | 有标题/卡片 398 · 非占位简介 213 · 字幕片段 5 条（2 个视频）· 仅标题/卡片 183 |
 | A/B 测试 | 20 个视频 · 6 类主题 · 生成 15 组 · SKIP 5 个 |
 
+## 任务 05（本轮）
+
+- **上下文审计**：12 个视频 / 37 条事实，逐条标 `subtitle / description / title / inference`；区分“简介写了”与“视频演了”。
+- **v2 指南**：新增 7 条硬规则（具体≠准确、不推断动机、不编造个人体验、不强制金句、先直接反应、目标不互相替代、不足就 SKIP）。
+- **三组盲测**：A（基础）/ B（v1）/ C（v2），12 视频 × 3 = 36 条，X/Y/Z 随机。
+- **三个修正**：镜子 B 的动机不再写成事实；司凤补上肢体动作；音乐不再写“跟着哼”。
+- **仍未收到 Task 04 评分**，所以本轮不计算 Task 04 胜负，也不宣布 A/B/C 哪组更好。
+
+详见 [`docs/09-task05-report.md`](docs/09-task05-report.md)。
+
 ## 阅读顺序（给 GPT）
 
 1. [`transcript/conversation.md`](transcript/conversation.md) —— **这句话之后的全部对话**：任务 01→04 的用户消息原文 + 助手回复（含澄清与仓库搭建）
 2. [`docs/01-overview.md`](docs/01-overview.md) —— 任务 01→04 的来龙去脉与关键决策
 3. [`docs/04-quality-report.md`](docs/04-quality-report.md) —— 数据质量、对账口径、语境口径
 4. [`docs/05-style-labels.md`](docs/05-style-labels.md) —— 逐行标签的字段、分布与局限
-5. [`docs/06-ab-test.md`](docs/06-ab-test.md) —— A/B 盲评设计与产出
-6. [`docs/07-privacy-and-limits.md`](docs/07-privacy-and-limits.md) —— 哪些数据不在公开仓库、为什么
+5. [`docs/06-ab-test.md`](docs/06-ab-test.md) —— Task 04 A/B 盲评设计与产出
+6. [`docs/08-task05-plan.md`](docs/08-task05-plan.md) —— Task 05 计划
+7. [`docs/09-task05-report.md`](docs/09-task05-report.md) —— Task 05 审计、v2、三组盲测
+8. [`docs/07-privacy-and-limits.md`](docs/07-privacy-and-limits.md) —— 哪些数据不在公开仓库、为什么
 
 ## 目录
 
@@ -46,7 +58,11 @@ data/
   style_guide_v1.md   第一版个人风格指南（测试用）
   test_prompts.md     A/B 生成提示词（可复现）
 test_results.csv      A/B 结果（评论为模型生成，不含个人原文）
-blind_review.md       X/Y 随机盲评表
+blind_review.md       Task 04 X/Y 随机盲评表
+blind_review_task05.md Task 05 X/Y/Z 随机盲评表
+data/style_guide_v2.md Task 05 v2 指南
+data/task05_*.csv     审计 / 结果 / key
+docs/08-task05-plan.md / docs/09-task05-report.md
 PUSH.md               如何创建仓库、哪些不能公开
 scripts/README.md     采集/构建脚本的位置与用法
 ```
