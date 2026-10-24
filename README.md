@@ -60,6 +60,17 @@
 - **未完成且必须说明的**：`fish_experience_log` **仍是空的**。这意味着系统目前能证明"主人写过什么"，但还**不能证明"她经历过什么"**——验收标准只完成了一半。
 - 详见 [`docs/12-text-personality-memory-plan.md`](docs/12-text-personality-memory-plan.md)、[`docs/13-budget-privacy-and-safety.md`](docs/13-budget-privacy-and-safety.md)、[`docs/12-task-report.md`](docs/12-task-report.md)；数据在 `data/`。
 
+## 任务 08：原创文字分批理解与低负担档案机制
+
+- **动机**：主人无法逐条阅读 223 条原文，也不该被要求挑出「有价值的日记」。但也不能因启发式分低就永久排除某条。
+- **分批**：223 条 → **23 批 × 10 条**（末批 3），按时间升序；支持断点续跑（`processed` 按批回写）与增量更新（按 sha256 去重，新记录追加为 B024+）。
+- **只读定位**：完整清单只记 `raw.jsonl` 的**行号**，不复制原文——原文永远只有一份。
+- **单条归纳结构**：10 字段，**允许未知**（`valence` 默认 `unknown`，且 `unknown` 时 `basis` 不得为 `explicit`）；`counterevidence` 必填 ≥1。
+- **⚠️ 隐私审计发现**：Task 07 公开的索引里 **`record_id` 等于 745 个直达链接**（`t.bilibili.com/<id>`），`pub_iso` 秒级时间也属中高风险。已把完整索引移入本地 `local/`，公开版改为 `record_hash + 年月 + 长度分桶`。
+- **⚠️ 未解决**：**git 历史中仍保留旧索引**，彻底清除需重写历史，代价是分叉——等主人决定。
+- **成本**：全量跑一遍约 **¥0.07（非推理）/ ¥0.22（推理）**；¥7 够 30 遍。**本轮未花一分钱。**
+- 详见 [`docs/14-batch-processing-plan.md`](docs/14-batch-processing-plan.md)、[`docs/15-public-index-privacy-audit.md`](docs/15-public-index-privacy-audit.md)、[`docs/14-task-report.md`](docs/14-task-report.md)。
+
 ## 阅读顺序（给 GPT）
 
 1. [`transcript/conversation.md`](transcript/conversation.md) —— **这句话之后的全部对话**：任务 01→04 的用户消息原文 + 助手回复（含澄清与仓库搭建）

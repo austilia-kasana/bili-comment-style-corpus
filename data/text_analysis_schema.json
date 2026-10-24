@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/austilia-kasana/bili-comment-style-corpus/data/text_analysis_schema.json",
+  "title": "单条原创动态的归纳结果",
+  "description": "未来获得模型授权后，每条记录产出一条本结构的 JSON。核心原则：原文事实、作者明确表达的观点、模型推断三者必须分开；情绪与重要度允许未知。",
+  "type": "object",
+  "required": [
+    "source_id", "batch_id", "sha256_16",
+    "review_status", "confidence", "analyzed_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "_template": {
+      "type": "boolean",
+      "description": "模板标记。为 true 时表示本条仅演示结构，不含真实分析结果。"
+    },
+    "source_id": {
+      "type": "string",
+      "description": "原始记录 ID（本地完整形式）。公开版本需替换为 record_key。",
+      "pattern": "^[0-9]{15,20}$"
+    },
+    "record_key": {
+      "type": "string",
+      "description": "脱敏假名，sha256(salt|source_id)[:12]。公开时使用此字段代替 source_id。",
+      "pattern": "^[0-9a-f]{12}$"
+    },
+    "batch_id": { "type": "string", "pattern": "^B[0-9]{3}$" },
+    "sha256_16": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$",
+      "description": "原文内容的 sha256 前 16 位，用于校验记录未被篡改"
+    },
+
+    "topic": {
+      "type": "object",
+      "description": "主要主题。允许未知。",
+      "properties": {
+        "primary": { "type": ["string", "null"], "maxLength": 40 },
+        "secondary": {
+          "type": "array", "items": { "type": "string", "maxLength": 40 },
+          "maxItems": 3
+        },
+        "basis": {
+          "type": "string",
+          "enum": ["explicit_in_text", "inferred_from_text", "unknown"],
+          "description": "主题是原文明说的，还是推断的"
+        }
+      },
+      "required": ["primary", "basis"]
+    },
+
+    "emotion_signals": {
+      "type": "object",
+      "description": "文本中明确表达的情绪线索。必须允许 unknown——不要为了填字段而猜。",
+      "properties": {
+        "valence": {
+          "type": "string",
+          "enum": ["positive", "negative", "mixed", "neutral", "unknown"],
+          "default": "unknown"
+        },
+        "intensity": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "unknown"],
+          "default": "unknown"
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "joy", "sadness", "anger", "fear", "anxiety", "loneliness",
+              "fatigue", "relief", "gratitude", "nostalgia", "frustration",
+              "numbness", "confusion", "hope", "other", "unknown"
+            ]
+          },
+          "maxItems": 4
+        },
+        "quoted_cues": {
+          "type": "array",
+          "description": "支撑上述判断的原文片段（每条 ≤ 30 字）。用于让推断可复核。",
+          "items": { "type": "string", "maxLength": 30 },
+          "maxItems": 3
+        },
+        "basis": {
+          "type": "string",
+          "enum": ["explicit", "tone_only", "insufficient"],
+          "description": "explicit=文中明说；tone_only=只能从语气推；insufficient=证据不足"
+        }
+      },
+      "required": ["valence", "basis"]
+    },
+
+    "salience": {
+      "type": "object",
+      "description": "可能的重要程度及其依据。没有依据时 importance 必须为 unknown。",
+      "properties": {
+        "importance": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "unknown"],
+          "default": "unknown"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "life_event_stated", "value_conflict_stated", "repeated_theme",
+              "high_emotional_load", "reflects_change", "unusual_for_author",
+              "no_signal"
+            ]
+          }
+        },
+        "basis": { "type": "string", "enum": ["explicit", "inferred", "unknown"] }
+      },
+      "required": ["importance"]
+    },
+
+    "value_tension": {
+      "type": "object",
+      "description": "可能体现的价值冲突。允许为 null。",
+      "properties": {
+        "present": { "type": "boolean" },
+        "poles": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 40 },
+          "maxItems": 2,
+          "description": "冲突的两端，例如「想休息 / 觉得应该继续」"
+        },
+        "basis": { "type": "string", "enum": ["explicit", "inferred", "none"] }
+      },
+      "required": ["present"]
+    },
+
+    "life_event": {
+      "type": "object",
+      "description": "文本明确描述的事件。只在原文陈述了事件时填写；未陈述则为 null。",
+      "properties": {
+        "described": { "type": "boolean" },
+        "summary": { "type": ["string", "null"], "maxLength": 80 },
+        "time_reference": { "type": ["string", "null"], "maxLength": 30 },
+        "basis": { "type": "string", "enum": ["stated", "implied", "none"] }
+      },
+      "required": ["described"]
+    },
+
+    "interpretation": {
+      "type": "object",
+      "description": "对文本的暂定解释。必须与原文事实分开标注。",
+      "properties": {
+        "text": { "type": ["string", "null"], "maxLength": 300 },
+        "kind": {
+          "type": "string",
+          "enum": ["restatement", "inference", "speculation", "none"],
+          "description": "restatement=复述原文；inference=基于文本的推断；speculation=无足够依据的猜测"
+        }
+      },
+      "required": ["kind"]
+    },
+
+    "counterevidence": {
+      "type": "array",
+      "description": "相反证据或其他合理解释。至少一条，若确实没有写「未搜寻到」。",
+      "items": { "type": "string", "maxLength": 200 },
+      "minItems": 1
+    },
+
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "对本条整体归纳的置信度。默认 low。"
+    },
+
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "analyzed", "needs_review", "skipped"],
+      "description": "pending=待分析；analyzed=已分析；needs_review=待复核；skipped=暂不处理（必须给 reason）"
+    },
+
+    "skipped_reason": { "type": ["string", "null"], "maxLength": 200 },
+
+    "analyzed_at": { "type": "string", "format": "date-time" },
+
+    "analyzer": {
+      "type": "object",
+      "description": "产出本条的工具与参数，用于复现",
+      "properties": {
+        "kind": { "type": "string", "enum": ["model", "human", "local_rule"] },
+        "model": { "type": ["string", "null"] },
+        "prompt_sha256_16": { "type": ["string", "null"], "pattern": "^[0-9a-f]{16}$" },
+        "cost_cny": { "type": "number", "minimum": 0, "default": 0 }
+      },
+      "required": ["kind"]
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "review_status": { "const": "skipped" } }, "required": ["review_status"] },
+      "then": { "required": ["skipped_reason"] }
+    },
+    {
+      "comment": "情绪为 unknown 时，basis 不得为 explicit",
+      "if": {
+        "properties": { "emotion_signals": { "properties": { "valence": { "const": "unknown" } } } },
+        "required": ["emotion_signals"]
+      },
+      "then": {
+        "properties": { "emotion_signals": { "properties": { "basis": { "enum": ["tone_only", "insufficient"] } } } }
+      }
+    }
+  ],
+  "$comment": "本 schema 只定义结构。实际分析结果写入本地 text_analysis.jsonl，是否公开由主人决定。情绪与重要度字段的 unknown 是合法值，不是失败。"
+}

@@ -26,3 +26,7 @@ desktop.ini
 
 # 依赖
 node_modules/
+
+# Task 08：完整索引与批次清单只留本地
+local/
+
