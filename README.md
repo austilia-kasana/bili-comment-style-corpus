@@ -43,6 +43,14 @@
 - 详见 [`docs/10-task06-report.md`](docs/10-task06-report.md)。
 - **暂行指南**：[`data/style_guide_v1.1_interim.md`](data/style_guide_v1.1_interim.md)（Task 06 后整合版；**不覆盖** v1 / v2-lite 原件）。
 
+## 任务 07（探索性）：偏好盲测 —— AI 会喜欢什么视频？
+
+- **问题**：她的「爱看」写在配置里，而配置是主人写的，于是任何「喜欢」都可能是回声。本轮把偏好提示完全抽掉，只给标题/简介/时长，看她会不会收敛到某类内容。
+- **设计**：两个候选池对冲偏差——**热门池**（算法推荐）与**冷门池**（0 播放新投稿）；20 条目 / 30 组配对（K₂₀ 三轮 1-因素分解），每项恰好 3 次出场、3 个不同对手、比较图全连通；左右位置与比较顺序随机化。
+- **结果**：位置偏差 14/30（47%，未见显著）；池效应 19:11，跨池 16:8，二项检验 **p = 0.152（不显著）**；分层 4 全胜 / 6 两胜 / 6 一胜 / 4 全负。**未采用 Bradley-Terry**——完全分离结构下 MLE 发散。
+- **核心发现**：**本轮测到的不是「她的偏好」**。模型在推理链中明写「作为 AI 没有个人偏好，但必须选」，且 10/30 的推理仍在使用「预测点击率」的词汇。全负 4 条中 3 条是带货广告——说明模型能识别广告感，但这不等于「不喜欢」。
+- 详见 [`docs/11-preference-blind-test.md`](docs/11-preference-blind-test.md)，原始数据在 `experiments/preference-blind-test-20261024/`。
+
 ## 阅读顺序（给 GPT）
 
 1. [`transcript/conversation.md`](transcript/conversation.md) —— **这句话之后的全部对话**：任务 01→04 的用户消息原文 + 助手回复（含澄清与仓库搭建）
@@ -53,7 +61,8 @@
 6. [`docs/08-task05-plan.md`](docs/08-task05-plan.md) —— Task 05 计划
 7. [`docs/09-task05-report.md`](docs/09-task05-report.md) —— Task 05 审计、v2、三组盲测
 8. [`docs/10-task06-report.md`](docs/10-task06-report.md) —— Task 06 v2-lite、独立生成、SKIP 测试
-9. [`docs/07-privacy-and-limits.md`](docs/07-privacy-and-limits.md) —— 哪些数据不在公开仓库、为什么
+9. [`docs/11-preference-blind-test.md`](docs/11-preference-blind-test.md) —— 偏好盲测：20 条目 / 30 组配对，热门池 vs 冷门池
+10. [`docs/07-privacy-and-limits.md`](docs/07-privacy-and-limits.md) —— 哪些数据不在公开仓库、为什么
 
 ## 目录
 
@@ -80,6 +89,8 @@ data/task05_*.csv     审计 / 结果 / key
 data/task06_*.csv     审计 / 结果 / 生成顺序 / key
 docs/08-task05-plan.md / docs/09-task05-report.md
 docs/10-task06-report.md
+docs/11-preference-blind-test.md  偏好盲测报告
+experiments/preference-blind-test-20261024/  盲测原始数据（8 份 + README）
 PUSH.md               如何创建仓库、哪些不能公开
 scripts/README.md     采集/构建脚本的位置与用法
 ```

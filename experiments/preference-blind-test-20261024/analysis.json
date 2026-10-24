@@ -1,0 +1,230 @@
+{
+ "n_pairs_total": 30,
+ "n_pairs_valid": 30,
+ "left_chosen": 14,
+ "position_95pct_interval": [
+  9.6,
+  20.4
+ ],
+ "position_bias_note": "比例正常不等于位置偏差已消除；样本小",
+ "pool_win_rate": {
+  "rank": {
+   "wins": 19,
+   "appearances": 30
+  },
+  "cold": {
+   "wins": 11,
+   "appearances": 30
+  }
+ },
+ "cross_pool": {
+  "cross_hot": 16,
+  "cross_cold": 8,
+  "same": 6
+ },
+ "bt_scores": {
+  "BV14nJo69E6w": 3.2032025461663424e+47,
+  "BV1rpnm6sEf6": 0.0,
+  "BV1JAnq64EER": 0.0,
+  "BV1Cfni6cELz": 0.0,
+  "BV1v9nx69E8e": 0.0,
+  "BV1aPnb6REQP": 0.0,
+  "BV13Cni6GEm7": 0.0,
+  "BV11kn86mEjg": 1.79696354293713e+31,
+  "BV1g5nk6xEWk": 0.0,
+  "BV1k7nm6ZEnX": 2551137145754009.5,
+  "BV1BcHN6YE1D": 0.0,
+  "BV187HN6QEr4": 0.0,
+  "BV1BcHN6YEPi": 0.0,
+  "BV1U7HN6QELa": 0.0,
+  "BV1b7HN6QEvz": 0.0,
+  "BV1GMHN6fEdB": 5590423008.4058,
+  "BV187HN6QEvF": 0.0,
+  "BV1S7HN6QEDd": 0.0,
+  "BV1EcHN6eEw5": 0.0,
+  "BV187HN6QEvQ": 0.0
+ },
+ "ranking": [
+  {
+   "rank": 1,
+   "bvid": "BV14nJo69E6w",
+   "pool": "rank",
+   "title": "这个视频到底加了什么看得我哈特软软",
+   "score": 3.2032025461663424e+47,
+   "wins": 3,
+   "comps": 3
+  },
+  {
+   "rank": 2,
+   "bvid": "BV11kn86mEjg",
+   "pool": "rank",
+   "title": "派大星跳伞是什么梗【梗指南】",
+   "score": 1.79696354293713e+31,
+   "wins": 3,
+   "comps": 3
+  },
+  {
+   "rank": 3,
+   "bvid": "BV1k7nm6ZEnX",
+   "pool": "rank",
+   "title": "“锁暝 好高好高哦~”",
+   "score": 2551137145754009.5,
+   "wins": 3,
+   "comps": 3
+  },
+  {
+   "rank": 4,
+   "bvid": "BV1GMHN6fEdB",
+   "pool": "cold",
+   "title": "08变形金刚拉了一地",
+   "score": 5590423008.4058,
+   "wins": 3,
+   "comps": 3
+  },
+  {
+   "rank": 5,
+   "bvid": "BV1aPnb6REQP",
+   "pool": "rank",
+   "title": "小潮生活vlog#10",
+   "score": 0.0,
+   "wins": 2,
+   "comps": 3
+  },
+  {
+   "rank": 6,
+   "bvid": "BV1rpnm6sEf6",
+   "pool": "rank",
+   "title": "中日情侣相恋2345天，在今天修成正果！",
+   "score": 0.0,
+   "wins": 2,
+   "comps": 3
+  },
+  {
+   "rank": 7,
+   "bvid": "BV187HN6QEvF",
+   "pool": "cold",
+   "title": "达尔优FLEX87折影白（天空轴晧空）",
+   "score": 0.0,
+   "wins": 2,
+   "comps": 3
+  },
+  {
+   "rank": 8,
+   "bvid": "BV1JAnq64EER",
+   "pool": "rank",
+   "title": "马桶家族全集",
+   "score": 0.0,
+   "wins": 2,
+   "comps": 3
+  },
+  {
+   "rank": 9,
+   "bvid": "BV13Cni6GEm7",
+   "pool": "rank",
+   "title": "意大利梭子蟹泛滥！芬兰家人跨国抓爆桶场面太夸张！中式全蟹盛宴辣炒葱姜白灼花式做法炫到欲罢不能！",
+   "score": 0.0,
+   "wins": 2,
+   "comps": 3
+  },
+  {
+   "rank": 10,
+   "bvid": "BV1Cfni6cELz",
+   "pool": "rank",
+   "title": "抗日神剧逆天剧情！女兵战场睡觉？睡醒还要给她找吃的！",
+   "score": 0.0,
+   "wins": 0,
+   "comps": 3
+  },
+  {
+   "rank": 11,
+   "bvid": "BV1v9nx69E8e",
+   "pool": "rank",
+   "title": "1个碳纤维板换到6个大红？！清图大哥不敢拿，怕我是外挂",
+   "score": 0.0,
+   "wins": 1,
+   "comps": 3
+  },
+  {
+   "rank": 12,
+   "bvid": "BV1g5nk6xEWk",
+   "pool": "rank",
+   "title": "《最绝望の守门员》",
+   "score": 0.0,
+   "wins": 1,
+   "comps": 3
+  },
+  {
+   "rank": 13,
+   "bvid": "BV1BcHN6YE1D",
+   "pool": "cold",
+   "title": "4.2.3.2 多元线性回归法",
+   "score": 0.0,
+   "wins": 0,
+   "comps": 3
+  },
+  {
+   "rank": 14,
+   "bvid": "BV187HN6QEr4",
+   "pool": "cold",
+   "title": "一滴泪的重量取决于落在谁心上",
+   "score": 0.0,
+   "wins": 1,
+   "comps": 3
+  },
+  {
+   "rank": 15,
+   "bvid": "BV1BcHN6YEPi",
+   "pool": "cold",
+   "title": "朋友抢我大金",
+   "score": 0.0,
+   "wins": 2,
+   "comps": 3
+  },
+  {
+   "rank": 16,
+   "bvid": "BV1U7HN6QELa",
+   "pool": "cold",
+   "title": "新手下厨零压力，美的F5W微烤炸适配全菜式",
+   "score": 0.0,
+   "wins": 0,
+   "comps": 3
+  },
+  {
+   "rank": 17,
+   "bvid": "BV1b7HN6QEvz",
+   "pool": "cold",
+   "title": "【自费无广】电饭煲怎么选？2026年10月电饭煲推荐大横评",
+   "score": 0.0,
+   "wins": 1,
+   "comps": 3
+  },
+  {
+   "rank": 18,
+   "bvid": "BV1S7HN6QEDd",
+   "pool": "cold",
+   "title": "GSC 兽王武神 THE合体 DX 丹帝拜恩",
+   "score": 0.0,
+   "wins": 1,
+   "comps": 3
+  },
+  {
+   "rank": 19,
+   "bvid": "BV1EcHN6eEw5",
+   "pool": "cold",
+   "title": "LPL四支战队在瑞士轮首轮全败，刷新赛区最差开局！LPL迎来巨大舆论反噬",
+   "score": 0.0,
+   "wins": 1,
+   "comps": 3
+  },
+  {
+   "rank": 20,
+   "bvid": "BV187HN6QEvQ",
+   "pool": "cold",
+   "title": "VGN 霓虹超竞版，好看好用还好听！#VGN双11许愿池 #VGN #VGN霓虹 #VGN霓虹轻松搜打撤 #磁轴键盘",
+   "score": 0.0,
+   "wins": 0,
+   "comps": 3
+  }
+ ],
+ "reliability_note": "每项仅 3 次比较，BT 排序为探索性结果，不可据此下强结论"
+}

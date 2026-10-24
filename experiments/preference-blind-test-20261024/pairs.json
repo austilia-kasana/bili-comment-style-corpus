@@ -1,0 +1,242 @@
+[
+ {
+  "pair_id": 25,
+  "round": 3,
+  "left": 2,
+  "right": 13,
+  "cross_pool": true,
+  "order": 1
+ },
+ {
+  "pair_id": 27,
+  "round": 3,
+  "left": 4,
+  "right": 11,
+  "cross_pool": true,
+  "order": 2
+ },
+ {
+  "pair_id": 5,
+  "round": 1,
+  "left": 4,
+  "right": 15,
+  "cross_pool": true,
+  "order": 3
+ },
+ {
+  "pair_id": 10,
+  "round": 1,
+  "left": 9,
+  "right": 10,
+  "cross_pool": true,
+  "order": 4
+ },
+ {
+  "pair_id": 19,
+  "round": 2,
+  "left": 10,
+  "right": 7,
+  "cross_pool": true,
+  "order": 5
+ },
+ {
+  "pair_id": 13,
+  "round": 2,
+  "left": 1,
+  "right": 16,
+  "cross_pool": true,
+  "order": 6
+ },
+ {
+  "pair_id": 7,
+  "round": 1,
+  "left": 13,
+  "right": 6,
+  "cross_pool": true,
+  "order": 7
+ },
+ {
+  "pair_id": 29,
+  "round": 3,
+  "left": 9,
+  "right": 6,
+  "cross_pool": false,
+  "order": 8
+ },
+ {
+  "pair_id": 12,
+  "round": 2,
+  "left": 17,
+  "right": 19,
+  "cross_pool": false,
+  "order": 9
+ },
+ {
+  "pair_id": 16,
+  "round": 2,
+  "left": 4,
+  "right": 13,
+  "cross_pool": true,
+  "order": 10
+ },
+ {
+  "pair_id": 8,
+  "round": 1,
+  "left": 7,
+  "right": 12,
+  "cross_pool": true,
+  "order": 11
+ },
+ {
+  "pair_id": 1,
+  "round": 1,
+  "left": 0,
+  "right": 19,
+  "cross_pool": true,
+  "order": 12
+ },
+ {
+  "pair_id": 2,
+  "round": 1,
+  "left": 1,
+  "right": 18,
+  "cross_pool": true,
+  "order": 13
+ },
+ {
+  "pair_id": 18,
+  "round": 2,
+  "left": 11,
+  "right": 6,
+  "cross_pool": true,
+  "order": 14
+ },
+ {
+  "pair_id": 17,
+  "round": 2,
+  "left": 5,
+  "right": 12,
+  "cross_pool": true,
+  "order": 15
+ },
+ {
+  "pair_id": 14,
+  "round": 2,
+  "left": 15,
+  "right": 2,
+  "cross_pool": true,
+  "order": 16
+ },
+ {
+  "pair_id": 15,
+  "round": 2,
+  "left": 3,
+  "right": 14,
+  "cross_pool": true,
+  "order": 17
+ },
+ {
+  "pair_id": 30,
+  "round": 3,
+  "left": 8,
+  "right": 7,
+  "cross_pool": false,
+  "order": 18
+ },
+ {
+  "pair_id": 22,
+  "round": 3,
+  "left": 18,
+  "right": 16,
+  "cross_pool": false,
+  "order": 19
+ },
+ {
+  "pair_id": 9,
+  "round": 1,
+  "left": 11,
+  "right": 8,
+  "cross_pool": true,
+  "order": 20
+ },
+ {
+  "pair_id": 26,
+  "round": 3,
+  "left": 3,
+  "right": 12,
+  "cross_pool": true,
+  "order": 21
+ },
+ {
+  "pair_id": 20,
+  "round": 2,
+  "left": 8,
+  "right": 9,
+  "cross_pool": false,
+  "order": 22
+ },
+ {
+  "pair_id": 21,
+  "round": 3,
+  "left": 0,
+  "right": 17,
+  "cross_pool": true,
+  "order": 23
+ },
+ {
+  "pair_id": 4,
+  "round": 1,
+  "left": 16,
+  "right": 3,
+  "cross_pool": true,
+  "order": 24
+ },
+ {
+  "pair_id": 6,
+  "round": 1,
+  "left": 14,
+  "right": 5,
+  "cross_pool": true,
+  "order": 25
+ },
+ {
+  "pair_id": 11,
+  "round": 2,
+  "left": 0,
+  "right": 18,
+  "cross_pool": true,
+  "order": 26
+ },
+ {
+  "pair_id": 3,
+  "round": 1,
+  "left": 2,
+  "right": 17,
+  "cross_pool": true,
+  "order": 27
+ },
+ {
+  "pair_id": 24,
+  "round": 3,
+  "left": 14,
+  "right": 1,
+  "cross_pool": true,
+  "order": 28
+ },
+ {
+  "pair_id": 23,
+  "round": 3,
+  "left": 15,
+  "right": 19,
+  "cross_pool": false,
+  "order": 29
+ },
+ {
+  "pair_id": 28,
+  "round": 3,
+  "left": 10,
+  "right": 5,
+  "cross_pool": true,
+  "order": 30
+ }
+]

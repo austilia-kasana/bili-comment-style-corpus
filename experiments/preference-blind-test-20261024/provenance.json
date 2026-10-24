@@ -1,0 +1,33 @@
+{
+ "run_at": "20261024_135628",
+ "watched_excluded": 33,
+ "hot_pool_raw": 150,
+ "hot_pool_unique": 132,
+ "hot_pool_usable": 104,
+ "cold_pool_raw": 160,
+ "cold_pool_unique": 160,
+ "cold_pool_usable": 104,
+ "cold_regions_tried": [
+  1,
+  3,
+  4,
+  36,
+  188,
+  119,
+  155,
+  5
+ ],
+ "selected_hot": 10,
+ "selected_cold": 10,
+ "duration_filter_sec": [
+  30,
+  1800
+ ],
+ "random_seed_note": "打乱使用系统随机（未固定种子）；如需复现请参考 batch.json",
+ "sources": {
+  "rank": "x/web-interface/ranking/v2?rid=0&type=all",
+  "popular": "x/web-interface/popular?pn=1&ps=50",
+  "cold": "x/web-interface/newlist?rid=<分区>&pn=1&ps=20"
+ },
+ "explicit_filter_note": "热门池本身即 B 站算法推荐结果，候选池已含算法偏好；冷门池为 0 播放新投稿，二者差异见 pool_*.json"
+}
