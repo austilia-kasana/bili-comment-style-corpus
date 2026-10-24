@@ -51,6 +51,15 @@
 - **核心发现**：**本轮测到的不是「她的偏好」**。模型在推理链中明写「作为 AI 没有个人偏好，但必须选」，且 10/30 的推理仍在使用「预测点击率」的词汇。全负 4 条中 3 条是带货广告——说明模型能识别广告感，但这不等于「不喜欢」。
 - 详见 [`docs/11-preference-blind-test.md`](docs/11-preference-blind-test.md)，原始数据在 `experiments/preference-blind-test-20261024/`。
 
+## 任务 07：文本人格与连续记忆系统（零付费原型）
+
+- **目标转向**：从"模仿评论风格"转向"建立可追溯的连续记忆"——让过去发生的事真的影响未来的选择，而不是让日记写得更像人。
+- **四类材料隔离**：`user_writings`（主人原创）/ `fish_diary`（她的日记，原样保留）/ `interaction_memory`（真实互动）/ `fish_experience_log`（她实际执行的活动）。**任何合并都会导致身份错位。**
+- **阶段一（已完成，¥0）**：本地规则解析 762 条动态 → 去重 745 → 排除 520 条转发 → **224 条原创主集全部有正文**；建立索引与启发式候选清单（224 条评分，输出前 80）。
+- **发现的结构坑**：`DYNAMIC_TYPE_WORD/DRAW` 的 `desc` 为 `None`，正文实际在 `major.opus.summary.text`——第一版脚本因此提取出 0 条正文。
+- **未完成且必须说明的**：`fish_experience_log` **仍是空的**。这意味着系统目前能证明"主人写过什么"，但还**不能证明"她经历过什么"**——验收标准只完成了一半。
+- 详见 [`docs/12-text-personality-memory-plan.md`](docs/12-text-personality-memory-plan.md)、[`docs/13-budget-privacy-and-safety.md`](docs/13-budget-privacy-and-safety.md)、[`docs/12-task-report.md`](docs/12-task-report.md)；数据在 `data/`。
+
 ## 阅读顺序（给 GPT）
 
 1. [`transcript/conversation.md`](transcript/conversation.md) —— **这句话之后的全部对话**：任务 01→04 的用户消息原文 + 助手回复（含澄清与仓库搭建）

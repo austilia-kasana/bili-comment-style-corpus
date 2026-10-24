@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/austilia-kasana/bili-comment-style-corpus/data/experience_log_schema.json",
+  "title": "fish_experience_log — 大肥鱼实际经历记录",
+  "description": "记录大肥鱼在工具环境中真实执行的活动。核心原则：只记录实际发生的，可核验的。无法核验的内容不得写入本日志。",
+  "type": "object",
+  "required": ["entries"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": ["id", "at", "activity", "evidence", "outcome", "verifiable"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^EXP-\\d{6}$",
+          "description": "递增编号，如 EXP-000001。不复用，不删除。"
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "活动实际发生的时间（不是记录时间）"
+        },
+        "activity": {
+          "type": "string",
+          "enum": [
+            "read_text",
+            "watch_video",
+            "browse_feed",
+            "write_diary",
+            "record_memory",
+            "compare_judgments",
+            "explore_topic",
+            "organize_index",
+            "reflect"
+          ],
+          "description": "活动类型。仅限枚举值，新增需修改 schema。"
+        },
+        "target": {
+          "type": "object",
+          "description": "活动对象。必须能指向一个具体的本地或远程资源。",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": ["bvid", "file", "record_id", "url", "session", "none"]
+            },
+            "ref": { "type": "string" },
+            "title": { "type": "string" }
+          },
+          "required": ["kind", "ref"]
+        },
+        "evidence": {
+          "type": "object",
+          "description": "可核验的本地证据。没有证据的经历只能标 verifiable=false。",
+          "properties": {
+            "path": { "type": "string", "description": "本地绝对路径或仓库相对路径" },
+            "sha256": { "type": "string" },
+            "bytes": { "type": "integer", "minimum": 0 }
+          },
+          "required": ["path"]
+        },
+        "verifiable": {
+          "type": "boolean",
+          "description": "evidence.path 指向的文件是否真实存在且可读。false 表示这条经历无法被外部核验。"
+        },
+        "outcome": {
+          "type": "string",
+          "enum": ["completed", "partial", "skipped", "failed", "blocked"],
+          "description": "活动结果"
+        },
+        "result_summary": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "一句话描述实际得到了什么。不得写入未发生的内容。"
+        },
+        "cost": {
+          "type": "object",
+          "description": "本次活动消耗。用于预算追踪。",
+          "properties": {
+            "model_calls": { "type": "integer", "minimum": 0, "default": 0 },
+            "tokens": { "type": "integer", "minimum": 0, "default": 0 },
+            "cny": { "type": "number", "minimum": 0, "default": 0 }
+          }
+        },
+        "refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "引用的其他记录 id 或假设 id（H-xxx）。反思类活动必须至少有一条。"
+        },
+        "reflection": {
+          "type": "object",
+          "description": "可选。对自己先前判断的修正。",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": ["observation", "contradiction", "revision", "speculation"]
+            },
+            "text": { "type": "string", "maxLength": 500 },
+            "revises": { "type": "string", "description": "被修正的假设 id" }
+          },
+          "required": ["kind", "text"]
+        },
+        "skipped_reason": {
+          "type": "string",
+          "description": "outcome 为 skipped/blocked/failed 时必填。必须写具体原因和可行的后续动作。"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "outcome": { "enum": ["skipped", "blocked", "failed"] } },
+            "required": ["outcome"]
+          },
+          "then": { "required": ["skipped_reason"] }
+        },
+        {
+          "if": {
+            "properties": { "activity": { "const": "reflect" } },
+            "required": ["activity"]
+          },
+          "then": {
+            "required": ["refs"],
+            "properties": { "refs": { "minItems": 1 } }
+          }
+        },
+        {
+          "if": {
+            "properties": { "verifiable": { "const": true } },
+            "required": ["verifiable"]
+          },
+          "then": { "required": ["evidence"] }
+        }
+      ]
+    }
+  },
+  "$comment": "本文件只定义结构，不含任何真实记录。真实记录写入本地 experience_log.jsonl，是否公开由主人决定。"
+}
