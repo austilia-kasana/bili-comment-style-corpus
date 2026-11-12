@@ -71,6 +71,17 @@
 - **成本**：全量跑一遍约 **¥0.07（非推理）/ ¥0.22（推理）**；¥7 够 30 遍。**本轮未花一分钱。**
 - 详见 [`docs/14-batch-processing-plan.md`](docs/14-batch-processing-plan.md)、[`docs/15-public-index-privacy-audit.md`](docs/15-public-index-privacy-audit.md)、[`docs/14-task-report.md`](docs/14-task-report.md)。
 
+## 任务 09：223 条原创动态的首轮模型分析
+
+- **规模**：223 条 / 23 批，`deepseek-flash`，`temperature=0`。**花费 ¥0.4238**（预算 ¥17，余约 ¥16.58）。
+- **完成度**：222 条一次成功，1 条因原文仅 **1 个字符**导致 JSON 解析失败，单独补跑后 **223/223 全完成**。
+- **核心结果**：`negative` 96（43%）/ `unknown` 59（26.5%）/ `mixed` 38 / `positive` 18 / `neutral` 12；置信度 `high` 仅 7 条（3.1%）；重要度 `unknown` 86 条（38.6%）。
+- **⚠️ 最重要的发现**：与 Task 07 的关键词启发式对比（可比 80 条），**完全一致仅 20.0%**；交叉表里 **26 条被启发式判为「neutral」的，模型判为「negative」**。Task 07 得到的「neutral 183 / negative 21」分布**几乎与模型结果相反**——关键词法对短文本有结构性缺陷（Task 07 自己也记录了 206/224 落在 low 置信度）。
+- **暴露的三个 schema 缺陷**：① `topic.primary` 是自由字符串，模型给出高度具体描述，**无法聚合**（192 条有主题但前 20 频次全为 1）；② 情绪枚举不够用，**`other` 高达 87 次**；③ **2 条记录缺 `interpretation` 字段**。
+- **值得记的一点**：`unknown` 被真实使用（情绪 26.5%、重要度 38.6%），说明模型没有为了填满字段而硬编。
+- **隐私处理**：公开摘要删去 `topics.top20`（主题文案可指向具体原文），仅保留计数，差异记录在 `_privacy` 字段。
+- 详见 [`docs/16-first-analysis-results.md`](docs/16-first-analysis-results.md)。
+
 ## 阅读顺序（给 GPT）
 
 1. [`transcript/conversation.md`](transcript/conversation.md) —— **这句话之后的全部对话**：任务 01→04 的用户消息原文 + 助手回复（含澄清与仓库搭建）

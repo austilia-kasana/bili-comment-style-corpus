@@ -1,0 +1,96 @@
+{
+ "total_records": 223,
+ "confidence": {
+  "medium": 137,
+  "low": 79,
+  "high": 7
+ },
+ "valence": {
+  "neutral": 12,
+  "negative": 96,
+  "unknown": 59,
+  "mixed": 38,
+  "positive": 18
+ },
+ "valence_basis": {
+  "tone_only": 79,
+  "explicit": 88,
+  "insufficient": 56
+ },
+ "intensity": {
+  "low": 57,
+  "medium": 77,
+  "high": 26,
+  "unknown": 63
+ },
+ "unknown_rate": 0.2646,
+ "topics": {
+  "with_topic": 192,
+  "null": 31,
+  "basis": {
+   "explicit_in_text": 162,
+   "inferred_from_text": 30,
+   "unknown": 31
+  },
+  "_note": "主题文案已移除：模型生成的主题描述可指向具体单条原文，按隐私审计规则不公开"
+ },
+ "emotion_labels": {
+  "frustration": 90,
+  "other": 87,
+  "unknown": 66,
+  "confusion": 50,
+  "sadness": 36,
+  "anxiety": 26,
+  "joy": 19,
+  "fatigue": 15,
+  "hope": 15,
+  "anger": 11,
+  "fear": 11,
+  "relief": 7,
+  "numbness": 5,
+  "nostalgia": 3,
+  "loneliness": 2
+ },
+ "salience": {
+  "importance": {
+   "low": 55,
+   "medium": 64,
+   "unknown": 86,
+   "high": 18
+  },
+  "reasons": {
+   "no_signal": 130,
+   "high_emotional_load": 71,
+   "repeated_theme": 12,
+   "value_conflict_stated": 17,
+   "reflects_change": 26,
+   "life_event_stated": 21
+  }
+ },
+ "life_event_described": 60,
+ "value_tension_present": 59,
+ "interpretation_kind": {
+  "restatement": 30,
+  "none": 59,
+  "inference": 132,
+  "null": 2
+ },
+ "counterevidence": {
+  "avg": 1.76,
+  "min": 1,
+  "max": 3
+ },
+ "vs_heuristic": {
+  "comparable": 80,
+  "agreement": 16
+ },
+ "_privacy": {
+  "removed": [
+   "topics.top20（主题文案）"
+  ],
+  "reason": "主题描述是对单条原文的概括，可逆向定位到具体记录",
+  "kept": [
+   "全部计数与分布"
+  ]
+ }
+}
