@@ -90,6 +90,17 @@
 - **隐私处理**：公开摘要删去 `topics.top20`（主题文案可指向具体原文），仅保留计数，差异记录在 `_privacy` 字段。
 - 详见 [`docs/18-task09-analysis-results.md`](docs/18-task09-analysis-results.md)。
 
+## 任务 10：Schema v2 重构（¥0，进行中）
+
+- **为什么先改 schema**：Task 09 暴露的 3 个缺陷（topic 无法聚合 / `other` 87 次 / 2 条缺 `interpretation`）不修，重跑只是把同一批缺陷再跑一遍。
+- **P0-A · topic 拆分**：`category`（13 个固定枚举，用于聚合）+ `secondary`（≤2）+ `detail`（自由，≤40 字）。12 类定义见 [`docs/19`](docs/19-task10-schema-v2.md) §2.2。
+- **P0-B · 情绪枚举**：诊断发现 **87 次 `other` 里 74 次是与其他标签共现**——它被当成「还有个说不出的第二情绪」在用，与 `unknown` 语义重叠。**删 `other`**，新增 8 个标签（disgust / self_deprecation / irony / anticipation / affection / admiration / helplessness / playfulness）。
+- **⚠️ 新增的 8 个标签是假设**：依据只有 **13 条**「只标 other」的样本，未验证。schema 里加了 `_provisional` 字段标记。
+- **P1 · `interpretation` 改必填**，允许全 null，但对象本身必须在。
+- **类别覆盖率测试的局限**：关键词粗映射得出 `unknown 18%`，但**关键词法正是 Task 09 证伪过的方法**；抽查未命中的 10 条都能归入 12 类，只是关键词表没覆盖。**18% 不能当分类失败，也不能当分类成功。**
+- **成本**：**¥0**（纯本地）。建议下一步先用 v2 跑 20 条验证（约 ¥0.04），通过再全量（约 ¥0.46）。
+- 详见 [`docs/19-task10-schema-v2.md`](docs/19-task10-schema-v2.md)，schema 在 [`data/text_analysis_schema.v2.json`](data/text_analysis_schema.v2.json)。
+
 ## 阅读顺序（给 GPT）
 
 **第 0 步（必读）**：[`ARCHITECTURE.md`](ARCHITECTURE.md) —— 三层结构、Task 时间线、三个核心结论、技术债

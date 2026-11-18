@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/austilia-kasana/bili-comment-style-corpus/data/text_analysis_schema.v2.json",
+  "title": "单条原创动态的归纳结果 v2",
+  "description": "v2 相对 v1 的两处结构性改动：① topic 拆成 category（固定枚举）+ detail（自由），解决无法聚合的问题；② 情绪枚举去掉 other（与 unknown 语义重叠），补入从 13 条样本推断出的缺失情绪。情绪枚举的扩充属于假设，见 _provisional。",
+  "type": "object",
+  "required": [
+    "schema_version", "source_id", "batch_id", "sha256_16",
+    "review_status", "confidence", "analyzed_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "2.0.0"
+    },
+    "_template": {
+      "type": "boolean",
+      "description": "模板标记。true 表示仅演示结构。"
+    },
+    "_provisional": {
+      "type": "object",
+      "description": "本条结果里哪些判断是暂定的、依据是什么。v2 新增，用于把「假设」和「结论」分开。",
+      "properties": {
+        "emotion_enum": { "type": "boolean", "default": false },
+        "note": { "type": ["string", "null"], "maxLength": 200 }
+      }
+    },
+
+    "source_id": {
+      "type": "string",
+      "description": "原始记录 ID（本地完整形式）。公开时改用 record_key。",
+      "pattern": "^[0-9]{15,20}$"
+    },
+    "record_key": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{12}$"
+    },
+    "batch_id": { "type": "string", "pattern": "^B[0-9]{3}$" },
+    "sha256_16": { "type": "string", "pattern": "^[0-9a-f]{16}$" },
+
+    "topic": {
+      "type": "object",
+      "description": "v2 核心改动：category 用于聚合，detail 用于保留单条信息。",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "body", "mood", "self", "desire", "relationship",
+            "work_money", "daily", "media", "creation",
+            "society", "knowledge", "dream", "unknown"
+          ],
+          "description": "固定类别。12 类 + unknown。定义见 docs/19-task10-schema-v2.md"
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "body", "mood", "self", "desire", "relationship",
+              "work_money", "daily", "media", "creation",
+              "society", "knowledge", "dream", "unknown"
+            ]
+          },
+          "maxItems": 2,
+          "description": "次要类别。确实只有一类时留空数组。"
+        },
+        "detail": {
+          "type": ["string", "null"],
+          "maxLength": 40,
+          "description": "自由描述，保留单条信息。长度上限 40 字，避免写成小作文。"
+        },
+        "basis": {
+          "type": "string",
+          "enum": ["explicit_in_text", "inferred_from_text", "unknown"]
+        }
+      },
+      "required": ["category", "basis"]
+    },
+
+    "emotion_signals": {
+      "type": "object",
+      "description": "v2：去掉 other，只保留 unknown 作为「无法命名」。新增 7 个标签（见 _provisional）。",
+      "additionalProperties": false,
+      "properties": {
+        "valence": {
+          "type": "string",
+          "enum": ["positive", "negative", "mixed", "neutral", "unknown"],
+          "default": "unknown"
+        },
+        "intensity": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "unknown"],
+          "default": "unknown"
+        },
+        "labels": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "enum": [
+              "joy", "sadness", "anger", "fear", "anxiety",
+              "loneliness", "fatigue", "relief", "gratitude",
+              "nostalgia", "frustration", "numbness", "confusion", "hope",
+              "disgust",
+              "self_deprecation",
+              "irony",
+              "anticipation",
+              "affection",
+              "admiration",
+              "helplessness",
+              "playfulness",
+              "unknown"
+            ]
+          },
+          "description": "多标签。前 14 个是 v1 原有；disgust~playfulness 是 v2 新增（推断，未验证）；unknown 是唯一表示「无法命名」的值。"
+        },
+        "quoted_cues": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 30 },
+          "maxItems": 3
+        },
+        "basis": {
+          "type": "string",
+          "enum": ["explicit", "tone_only", "insufficient"]
+        }
+      },
+      "required": ["valence", "basis"]
+    },
+
+    "salience": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "importance": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "unknown"],
+          "default": "unknown"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "life_event_stated", "value_conflict_stated", "repeated_theme",
+              "high_emotional_load", "reflects_change", "unusual_for_author",
+              "no_signal"
+            ]
+          }
+        },
+        "basis": { "type": "string", "enum": ["explicit", "inferred", "unknown"] }
+      },
+      "required": ["importance"]
+    },
+
+    "value_tension": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "present": { "type": "boolean" },
+        "poles": {
+          "type": "array",
+          "items": { "type": "string", "maxLength": 40 },
+          "maxItems": 2
+        },
+        "basis": { "type": "string", "enum": ["explicit", "inferred", "none"] }
+      },
+      "required": ["present"]
+    },
+
+    "life_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "described": { "type": "boolean" },
+        "summary": { "type": ["string", "null"], "maxLength": 80 },
+        "time_reference": { "type": ["string", "null"], "maxLength": 30 },
+        "basis": { "type": "string", "enum": ["stated", "implied", "none"] }
+      },
+      "required": ["described"]
+    },
+
+    "interpretation": {
+      "type": "object",
+      "description": "v2：改为必填（v1 有 2 条漏输出）。允许全 null，但对象本身必须在。",
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": ["string", "null"], "maxLength": 300 },
+        "kind": {
+          "type": "string",
+          "enum": ["restatement", "inference", "speculation", "none"]
+        }
+      },
+      "required": ["kind"]
+    },
+
+    "counterevidence": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 200 },
+      "minItems": 1
+    },
+
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+
+    "review_status": {
+      "type": "string",
+      "enum": ["pending", "analyzed", "needs_review", "skipped"]
+    },
+
+    "skipped_reason": { "type": ["string", "null"], "maxLength": 200 },
+
+    "analyzed_at": { "type": "string", "format": "date-time" },
+
+    "analyzer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "type": "string", "enum": ["model", "human", "local_rule"] },
+        "model": { "type": ["string", "null"] },
+        "prompt_sha256_16": { "type": ["string", "null"], "pattern": "^[0-9a-f]{16}$" },
+        "cost_cny": { "type": "number", "minimum": 0, "default": 0 }
+      },
+      "required": ["kind"]
+    }
+  },
+
+  "allOf": [
+    {
+      "if": { "properties": { "review_status": { "const": "skipped" } }, "required": ["review_status"] },
+      "then": { "required": ["skipped_reason"] }
+    },
+    {
+      "comment": "情绪为 unknown 时 basis 不得为 explicit",
+      "if": {
+        "properties": { "emotion_signals": { "properties": { "valence": { "const": "unknown" } } } },
+        "required": ["emotion_signals"]
+      },
+      "then": {
+        "properties": { "emotion_signals": { "properties": { "basis": { "enum": ["tone_only", "insufficient"] } } } }
+      }
+    },
+    {
+      "comment": "v2 新增：category 为 unknown 时不得同时给 secondary",
+      "if": {
+        "properties": { "topic": { "properties": { "category": { "const": "unknown" } } } },
+        "required": ["topic"]
+      },
+      "then": {
+        "properties": { "topic": { "properties": { "secondary": { "maxItems": 0 } } } }
+      }
+    }
+  ],
+
+  "$comment": "v2 的情绪枚举扩容属于假设：依据是 v1 里 87 次 other 中「只标 other」的 13 条样本，样本过小。使用方应把新增标签视为待验证，而不是既定分类。"
+}
