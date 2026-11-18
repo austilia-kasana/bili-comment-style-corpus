@@ -1,0 +1,85 @@
+{
+ "schema_version": "2.0.0",
+ "total": 223,
+ "valence": {
+  "neutral": 21,
+  "negative": 86,
+  "unknown": 41,
+  "mixed": 57,
+  "positive": 18
+ },
+ "unknown_rate": 0.1839,
+ "v1_unknown_rate": 0.2646,
+ "unknown_delta_pct": -8.1,
+ "labels": {
+  "confusion": 44,
+  "playfulness": 55,
+  "fatigue": 9,
+  "helplessness": 72,
+  "disgust": 8,
+  "anger": 7,
+  "unknown": 25,
+  "sadness": 32,
+  "frustration": 72,
+  "anticipation": 23,
+  "irony": 41,
+  "affection": 13,
+  "fear": 7,
+  "anxiety": 12,
+  "joy": 10,
+  "numbness": 2,
+  "relief": 6,
+  "self_deprecation": 33,
+  "admiration": 5,
+  "loneliness": 3,
+  "hope": 7,
+  "nostalgia": 3
+ },
+ "new_labels_used": {
+  "affection": 13,
+  "playfulness": 55,
+  "admiration": 5,
+  "irony": 41,
+  "anticipation": 23,
+  "helplessness": 72,
+  "self_deprecation": 33,
+  "disgust": 8
+ },
+ "other_count": 0,
+ "category": {
+  "daily": 21,
+  "body": 23,
+  "society": 12,
+  "self": 43,
+  "unknown": 36,
+  "relationship": 5,
+  "desire": 11,
+  "mood": 19,
+  "media": 26,
+  "work_money": 11,
+  "dream": 5,
+  "knowledge": 5,
+  "creation": 6
+ },
+ "top_category": {
+  "name": "self",
+  "share_pct": 19.3
+ },
+ "detail_len": {
+  "min": 0,
+  "max": 31,
+  "over40": 0
+ },
+ "interpretation_missing": 0,
+ "normalized": 0,
+ "skipped": 21,
+ "confidence": {
+  "medium": 150,
+  "high": 9,
+  "low": 64
+ },
+ "aggregability": {
+  "v1_unique_topic_ratio_pct": 100.0,
+  "v2_category_ratio_pct": 5.8
+ }
+}
