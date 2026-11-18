@@ -223,7 +223,7 @@ experience_log.jsonl  ← 她每次实际做了什么
 | 原始文本可追溯 | 每条记录有 `source_id` 指向原始文件 |
 | 推断可撤销 | 假设条目有 `status` 字段与原假设保留 |
 | 未来选择能引用历史 | `fish_experience_log` 的 `refs` 字段 |
-| 活动循环有产出要求且有停止条件 | 见 `docs/13-budget-privacy-and-safety.md` |
+| 活动循环有产出要求且有停止条件 | 见 `docs/13-task07-budget-privacy.md` |
 
 ---
 

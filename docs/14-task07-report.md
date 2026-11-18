@@ -16,8 +16,8 @@
 | 4 | 区分转发/原创 | ✅ 520 转发排除，224 条原创主集 |
 | 5 | 建立索引 | ✅ `data/user_bili_original_index.csv` |
 | 6 | 启发式候选筛选 | ✅ `data/emotion_memory_candidates.csv`（224 条评分，输出前 80） |
-| 7 | 架构文档 | ✅ `docs/12-text-personality-memory-plan.md` |
-| 8 | 预算与隐私边界 | ✅ `docs/13-budget-privacy-and-safety.md` |
+| 7 | 架构文档 | ✅ `docs/12-task07-memory-plan.md` |
+| 8 | 预算与隐私边界 | ✅ `docs/13-task07-budget-privacy.md` |
 | 9 | 人格假设模板 | ✅ `data/personality_hypotheses_initial.md`（模板 + 5 个待验证问题） |
 | 10 | 经历记录 schema | ✅ `data/experience_log_schema.json` |
 
@@ -106,9 +106,9 @@ desc.text
 | `data/task07_corpus_stats.json` | 约 1 KB | ❌ | ✅ |
 | `data/personality_hypotheses_initial.md` | 约 6 KB | ❌ | ✅ |
 | `data/experience_log_schema.json` | 约 7 KB | ❌ | ✅ |
-| `docs/12-text-personality-memory-plan.md` | 约 10 KB | ❌ | ✅ |
-| `docs/13-budget-privacy-and-safety.md` | 约 8 KB | ❌ | ✅ |
-| `docs/12-task-report.md` | 本文件 | ❌ | ✅ |
+| `docs/12-task07-memory-plan.md` | 约 10 KB | ❌ | ✅ |
+| `docs/13-task07-budget-privacy.md` | 约 8 KB | ❌ | ✅ |
+| `docs/14-task07-report.md` | 本文件 | ❌ | ✅ |
 
 **验证**：脚本内的 `_text` 字段仅在内存中存在，写盘前已剔除。两份 CSV 的列中均不含任何正文内容。
 

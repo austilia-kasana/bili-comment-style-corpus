@@ -10,12 +10,12 @@
 
 | # | 文件 | 大小 | 内容 |
 |---|---|---|---|
-| 1 | `docs/14-batch-processing-plan.md` | 8,112 B | 分批机制、断点续跑、增量更新、成本估算 |
+| 1 | `docs/15-task08-batch-plan.md` | 8,112 B | 分批机制、断点续跑、增量更新、成本估算 |
 | 2 | `data/text_batch_manifest.csv` | 12,922 B | **脱敏版**批次清单，223 行 / 23 批 |
 | 3 | `data/text_analysis_schema.json` | 7,815 B | 单条归纳结构，10 字段 + 条件校验 |
 | 4 | `data/text_analysis_template.jsonl` | 2,603 B | 3 条模板（pending / analyzed / skipped） |
-| 5 | `docs/15-public-index-privacy-audit.md` | 6,421 B | 逐列风险审计 + 脱敏方案 |
-| 6 | `docs/14-task-report.md` | 本文件 | — |
+| 5 | `docs/16-task08-privacy-audit.md` | 6,421 B | 逐列风险审计 + 脱敏方案 |
+| 6 | `docs/17-task08-report.md` | 本文件 | — |
 
 **另有 1 份新增公开文件**：`data/user_bili_original_index.public.csv`（50,508 B，脱敏索引）
 

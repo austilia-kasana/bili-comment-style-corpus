@@ -3,6 +3,14 @@
 > 从「采集自己的 B 站发言」到「逐行风格标签」再到「20 个视频的 A/B 盲评」的一条完整工作线。
 > 本项目是为 GPT 阅读/接力准备的**可浏览档案**：保留方法、统计、标签口径、测试设计，**不在公开仓库里放原始个人语料**。
 
+---
+
+> **📌 第一次读，先看 [`ARCHITECTURE.md`](ARCHITECTURE.md)。**
+> 那份是顶层地图：三层结构、Task 01~09 时间线、三个最该记住的结论、已知技术债、下一轮该做什么。
+> 本 README 是逐 Task 的详细记录，适合按需查阅。
+
+---
+
 ## 这条线在做什么
 
 1. **建语料**：读取用户本人公开的空间动态与视频评论，保留原始记录、唯一 ID、来源、上下文和作者确认状态。
@@ -58,7 +66,7 @@
 - **阶段一（已完成，¥0）**：本地规则解析 762 条动态 → 去重 745 → 排除 520 条转发 → **224 条原创主集全部有正文**；建立索引与启发式候选清单（224 条评分，输出前 80）。
 - **发现的结构坑**：`DYNAMIC_TYPE_WORD/DRAW` 的 `desc` 为 `None`，正文实际在 `major.opus.summary.text`——第一版脚本因此提取出 0 条正文。
 - **未完成且必须说明的**：`fish_experience_log` **仍是空的**。这意味着系统目前能证明"主人写过什么"，但还**不能证明"她经历过什么"**——验收标准只完成了一半。
-- 详见 [`docs/12-text-personality-memory-plan.md`](docs/12-text-personality-memory-plan.md)、[`docs/13-budget-privacy-and-safety.md`](docs/13-budget-privacy-and-safety.md)、[`docs/12-task-report.md`](docs/12-task-report.md)；数据在 `data/`。
+- 详见 [`docs/12-task07-memory-plan.md`](docs/12-task07-memory-plan.md)、[`docs/13-task07-budget-privacy.md`](docs/13-task07-budget-privacy.md)、[`docs/14-task07-report.md`](docs/14-task07-report.md)；数据在 `data/`。
 
 ## 任务 08：原创文字分批理解与低负担档案机制
 
@@ -69,7 +77,7 @@
 - **⚠️ 隐私审计发现**：Task 07 公开的索引里 **`record_id` 等于 745 个直达链接**（`t.bilibili.com/<id>`），`pub_iso` 秒级时间也属中高风险。已把完整索引移入本地 `local/`，公开版改为 `record_hash + 年月 + 长度分桶`。
 - **⚠️ 未解决**：**git 历史中仍保留旧索引**，彻底清除需重写历史，代价是分叉——等主人决定。
 - **成本**：全量跑一遍约 **¥0.07（非推理）/ ¥0.22（推理）**；¥7 够 30 遍。**本轮未花一分钱。**
-- 详见 [`docs/14-batch-processing-plan.md`](docs/14-batch-processing-plan.md)、[`docs/15-public-index-privacy-audit.md`](docs/15-public-index-privacy-audit.md)、[`docs/14-task-report.md`](docs/14-task-report.md)。
+- 详见 [`docs/15-task08-batch-plan.md`](docs/15-task08-batch-plan.md)、[`docs/16-task08-privacy-audit.md`](docs/16-task08-privacy-audit.md)、[`docs/17-task08-report.md`](docs/17-task08-report.md)。
 
 ## 任务 09：223 条原创动态的首轮模型分析
 
@@ -80,50 +88,62 @@
 - **暴露的三个 schema 缺陷**：① `topic.primary` 是自由字符串，模型给出高度具体描述，**无法聚合**（192 条有主题但前 20 频次全为 1）；② 情绪枚举不够用，**`other` 高达 87 次**；③ **2 条记录缺 `interpretation` 字段**。
 - **值得记的一点**：`unknown` 被真实使用（情绪 26.5%、重要度 38.6%），说明模型没有为了填满字段而硬编。
 - **隐私处理**：公开摘要删去 `topics.top20`（主题文案可指向具体原文），仅保留计数，差异记录在 `_privacy` 字段。
-- 详见 [`docs/16-first-analysis-results.md`](docs/16-first-analysis-results.md)。
+- 详见 [`docs/18-task09-analysis-results.md`](docs/18-task09-analysis-results.md)。
 
 ## 阅读顺序（给 GPT）
 
-1. [`transcript/conversation.md`](transcript/conversation.md) —— **这句话之后的全部对话**：任务 01→04 的用户消息原文 + 助手回复（含澄清与仓库搭建）
-2. [`docs/01-overview.md`](docs/01-overview.md) —— 任务 01→04 的来龙去脉与关键决策
-3. [`docs/04-quality-report.md`](docs/04-quality-report.md) —— 数据质量、对账口径、语境口径
-4. [`docs/05-style-labels.md`](docs/05-style-labels.md) —— 逐行标签的字段、分布与局限
-5. [`docs/06-ab-test.md`](docs/06-ab-test.md) —— Task 04 A/B 盲评设计与产出
-6. [`docs/08-task05-plan.md`](docs/08-task05-plan.md) —— Task 05 计划
-7. [`docs/09-task05-report.md`](docs/09-task05-report.md) —— Task 05 审计、v2、三组盲测
-8. [`docs/10-task06-report.md`](docs/10-task06-report.md) —— Task 06 v2-lite、独立生成、SKIP 测试
-9. [`docs/11-preference-blind-test.md`](docs/11-preference-blind-test.md) —— 偏好盲测：20 条目 / 30 组配对，热门池 vs 冷门池
-10. [`docs/07-privacy-and-limits.md`](docs/07-privacy-and-limits.md) —— 哪些数据不在公开仓库、为什么
+**第 0 步（必读）**：[`ARCHITECTURE.md`](ARCHITECTURE.md) —— 三层结构、Task 时间线、三个核心结论、技术债
+
+**然后按需要挑：**
+
+| 顺序 | 文档 | 讲什么 |
+|---|---|---|
+| 1 | [`transcript/conversation.md`](transcript/conversation.md) | 任务 01→04 的原始对话 |
+| 2 | [`docs/01-overview.md`](docs/01-overview.md) | Task 01~04 的来龙去脉 |
+| 3 | [`docs/04-quality-report.md`](docs/04-quality-report.md) | 数据质量与对账口径 |
+| 4 | [`docs/05-style-labels.md`](docs/05-style-labels.md) | 逐行标签的字段与局限 |
+| 5 | [`docs/06-ab-test.md`](docs/06-ab-test.md) | Task 04 A/B 盲评设计与产出 |
+| 6 | [`docs/08-task05-plan.md`](docs/08-task05-plan.md) | Task 05 计划 |
+| 7 | [`docs/09-task05-report.md`](docs/09-task05-report.md) | Task 05 审计、v2、三组盲测 |
+| 8 | [`docs/10-task06-report.md`](docs/10-task06-report.md) | Task 06 v2-lite、SKIP 测试 |
+| 9 | [`docs/11-preference-blind-test.md`](docs/11-preference-blind-test.md) | 偏好盲测（测出来的是「测不到」） |
+| 10 | [`docs/12-task07-memory-plan.md`](docs/12-task07-memory-plan.md) | Task 07 记忆系统架构 |
+| 11 | [`docs/18-task09-analysis-results.md`](docs/18-task09-analysis-results.md) | **最新一轮**：223 条模型分析 |
+| 12 | [`docs/07-privacy-and-limits.md`](docs/07-privacy-and-limits.md) | 隐私边界 |
+| 13 | [`scripts/python/README.md`](scripts/python/README.md) | **代码怎么跑**（12 个脚本 + 已知债） |
 
 ## 目录
 
 ```
+ARCHITECTURE.md        ← 顶层地图（先读这个）
+README.md              本文件：逐 Task 详细记录
 transcript/
-  conversation.md     这句话之后的全部对话（任务 01-04 + 回复）
-docs/                 方法与报告
+  conversation.md     任务 01-04 的原始对话
+docs/                 18 份，编号 01~18
   briefs/             四轮任务原文（任务 01-04）
-  samples/            脱敏样例（已打码）
+  01~07               Task 01~04 语料与标签
+  08~10               Task 05~06 风格指南迭代
+  11                  实验：偏好盲测
+  12~14               Task 07 记忆系统
+  15~17               Task 08 分批与隐私审计
+  18                  Task 09 模型分析结果
 data/
   samples/            脱敏预览
   reports/            汇总统计（无原文）
-  schema.md           CSV/字段说明
-  style_guide_v1.md   第一版个人风格指南（测试用）
-  test_prompts.md     A/B 生成提示词（可复现）
-test_results.csv      A/B 结果（评论为模型生成，不含个人原文）
-blind_review.md       Task 04 X/Y 随机盲评表
-blind_review_task05.md Task 05 X/Y/Z 随机盲评表
-blind_review_task06.md Task 06 X/Y 随机盲评表
-data/style_guide_v2.md Task 05 v2 指南
-data/style_guide_v2_lite.md Task 06 v2-lite 指南
-data/style_guide_v1.1_interim.md 暂行整合版（不覆盖 v1 / v2-lite）
-data/task05_*.csv     审计 / 结果 / key
-data/task06_*.csv     审计 / 结果 / 生成顺序 / key
-docs/08-task05-plan.md / docs/09-task05-report.md
-docs/10-task06-report.md
-docs/11-preference-blind-test.md  偏好盲测报告
-experiments/preference-blind-test-20261024/  盲测原始数据（8 份 + README）
+  *.schema.json       JSON Schema（分析结构 / 经历结构）
+  analysis_summary.json   Task 09 统计（已脱敏）
+  text_batch_manifest.csv 批次清单（脱敏）
+  user_bili_original_index.public.csv  索引（脱敏）
+  style_guide_v1.md / v2.md / v2_lite.md / v1.1_interim.md
+  task05_*.csv / task06_*.csv
+experiments/preference-blind-test-20261024/   盲测原始数据（9 份）
+scripts/
+  README.md           Node 脚本（Task 01~06）说明
+  *.mjs               Task 01~06
+  python/             Task 07~09（12 个 Python 脚本 + README）
+local/                ⚠️ 不进仓库（.gitignore）
+  raw 语料、完整索引、逐条分析结果
 PUSH.md               如何创建仓库、哪些不能公开
-scripts/README.md     采集/构建脚本的位置与用法
 ```
 
 ## 重要边界
