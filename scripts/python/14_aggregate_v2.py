@@ -16,8 +16,9 @@ sys.stdout.reconfigure(encoding="utf-8")
 REPO = os.environ.get("BILI_REPO", os.path.expanduser("~/bili-comment-style-corpus"))
 LOCAL = os.path.join(REPO, "local")
 V1 = os.path.join(LOCAL, "text_analysis.jsonl")
-V2 = os.path.join(LOCAL, "text_analysis.v2.jsonl")
-OUT = os.path.join(LOCAL, "analysis_summary.v2.json")
+VERSION = os.environ.get("BILI_SCHEMA_VERSION", "2.1")
+V2 = os.path.join(LOCAL, "text_analysis.v2.jsonl" if VERSION == "2" else "text_analysis.v2.1.jsonl")
+OUT = os.path.join(LOCAL, f"analysis_summary.v{VERSION.replace('.', '')}.json")
 
 NEW_LABELS = {"disgust", "self_deprecation", "irony", "anticipation",
               "affection", "admiration", "helplessness", "playfulness"}

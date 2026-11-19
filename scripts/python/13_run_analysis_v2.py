@@ -19,7 +19,9 @@ sys.stdout.reconfigure(encoding="utf-8")
 LOCAL = os.path.join(REPO, "local")
 MAN = os.path.join(LOCAL, "text_batch_manifest.csv")
 RAW = os.path.join(CORPUS, "data", "raw.jsonl")
-OUT = os.path.join(LOCAL, "text_analysis.v2.jsonl")
+# 版本化输出：v2 与 v2.1 不互相覆盖
+VERSION = os.environ.get("BILI_SCHEMA_VERSION", "2.1")
+OUT = os.path.join(LOCAL, "text_analysis.v2.jsonl" if VERSION == "2" else "text_analysis.v2.1.jsonl")
 
 cred = os.path.join(os.path.expanduser("~"), ".dsh", ".credentials.yaml")
 KEY = re.search(r"DEEPSEEK_API_KEY:\s*(\S+)", open(cred, encoding="utf-8").read()).group(1).strip()
@@ -57,11 +59,21 @@ topic.basis：explicit_in_text | inferred_from_text | unknown
 
 emotion_signals.labels（多选，最多 4 个）：
   joy sadness anger fear anxiety loneliness fatigue relief gratitude
-  nostalgia frustration numbness confusion hope
+  nostalgia numbness confusion hope
   disgust（厌恶） self_deprecation（自嘲） irony（反讽/黑色幽默）
   anticipation（期待） affection（喜爱亲近） admiration（赞叹）
-  helplessness（无力无奈） playfulness（调侃戏谑）
+  helplessness（无力） playfulness（调侃戏谑）
+  frustration（挫败）
   unknown（唯一表示「无法命名」的值，不要用 other）
+
+⚠️ frustration 与 helplessness 的区别，务必分清：
+  frustration  = 想做成某件事，但被外部条件挡住；伴有烦躁、不甘、想再试
+  helplessness = 明知无法改变现状，连尝试的力气都没有；伴有认命、疲惫、沉默
+
+⚠️ 这两个标签**不得同时使用**。只能二选一：
+  - 有「不服气 / 想再试」的成分 → 用 frustration
+  - 有「算了 / 改变不了」的成分 → 用 helplessness
+  - 两种都有时，选**主导**的那个，另一种写进 counterevidence
 emotion_signals.valence: positive | negative | mixed | neutral | unknown
 emotion_signals.intensity: low | medium | high | unknown
 emotion_signals.quoted_cues: 支撑判断的原文片段，每条≤30字，最多3条
@@ -192,6 +204,10 @@ def normalize(obj):
     if isinstance(ls, str):
         ls = [ls]
     ls = [x for x in ls if x != "other"][:4]
+    # v2.1：frustration 与 helplessness 互斥，若同时出现保留较窄的 helplessness
+    if "frustration" in ls and "helplessness" in ls:
+        ls = [x for x in ls if x != "frustration"]
+        problems.append("frustration+helplessness 同时出现 → 保留 helplessness")
     e["labels"] = ls
     if "valence" not in e:
         e["valence"] = "unknown"
